@@ -1,6 +1,7 @@
 nav {
-  background-color: #4a0080; // Violet foncé
+  background-color: #1c032e; // Violet foncé
   padding: 1rem;
+  transition: background-color 0.3s ease;
 
   ul {
     display: flex;
@@ -26,4 +27,11 @@ nav {
       }
     }
   }
+}
+
+// Style spécifique pour la page d'accueil
+:host(.accueil-theme) nav {
+  background: radial-gradient(circle at 20% 20%, rgba(128, 0, 255, 0.2), transparent 30%),
+    radial-gradient(circle at 80% 0%, rgba(255, 0, 255, 0.15), transparent 25%),
+    #0b0316;
 }
