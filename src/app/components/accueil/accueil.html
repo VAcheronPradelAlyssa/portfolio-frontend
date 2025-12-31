@@ -1,18 +1,10 @@
 <section class="accueil">
-  @if (loading()) {
-    <p>Chargement...</p>
-  } @else if (error()) {
-    <div class="error">
-      <p>{{ error() }}</p>
-      <p><em>Le frontend fonctionne ! Il faut maintenant créer le backend Spring Boot.</em></p>
-    </div>
-  } @else {
+
     <div class="accueil-container">
-      <h1>Bienvenue !</h1>
       <h2>Je suis {{ user()?.firstName }} {{ user()?.lastName }}</h2>
       <h3 class="animated-title">{{ currentTitle() }}</h3>
       <p>{{ user()?.description }}</p>
       <button class="download-cv">Télécharger mon CV</button>
     </div>
-  }
+  
 </section>
