@@ -311,8 +311,36 @@
     .parcours-subtitle {
       font-size: 1.05rem;
       color: rgba(255, 255, 255, 0.75);
-      margin: 0;
+      margin: 0 0 1rem 0;
       line-height: 1.6;
+    }
+
+    .parcours-details {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0 0;
+
+      li {
+        font-size: 0.95rem;
+        color: rgba(255, 255, 255, 0.7);
+        margin: 0.75rem 0;
+        padding-left: 1.2rem;
+        position: relative;
+        line-height: 1.5;
+
+        &::before {
+          content: '▸';
+          position: absolute;
+          left: 0;
+          color: #d580ff;
+          font-weight: bold;
+        }
+
+        strong {
+          color: #d580ff;
+          font-weight: 600;
+        }
+      }
     }
   }
 }
