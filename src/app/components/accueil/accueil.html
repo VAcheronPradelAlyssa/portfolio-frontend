@@ -1,7 +1,10 @@
 <section class="accueil">
 
     <div class="accueil-container">
-      <h1>Je suis {{ user()?.firstName }} {{ user()?.lastName }}</h1>
+      <h1>
+        {{ user()?.firstName }} {{ user()?.lastName }}
+        <span class="rotating-title">{{ displayedText() }}<span class="cursor"></span></span>
+      </h1>
       <h2 class="animated-title">Développeuse Full-Stack | Java • Angular</h2>
       
       <div class="presentation">

@@ -42,6 +42,26 @@
     margin-bottom: 2rem;
     font-weight: 700;
     animation: slideInFromLeft 0.8s ease-out;
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .rotating-title {
+    color: #d580ff;
+    min-width: 300px;
+    display: inline-block;
+    vertical-align: baseline;
+  }
+
+  .cursor {
+    display: inline-block;
+    width: 3px;
+    height: 1em;
+    background-color: #d580ff;
+    margin-left: 4px;
+    animation: blink 0.7s infinite;
   }
 
   .animated-title {
@@ -335,5 +355,14 @@
   50% {
     opacity: 0.5;
     transform: translateY(5px);
+  }
+}
+
+@keyframes blink {
+  0%, 49% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
   }
 }
