@@ -1,0 +1,29 @@
+nav {
+  background-color: #4a0080; // Violet foncé
+  padding: 1rem;
+
+  ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding:  0;
+
+    li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2rem;
+      transition: color 0.3s;
+
+      &:hover {
+        color: #d580ff; // Violet clair au survol
+      }
+
+      &.active {
+        color: #d580ff;
+        border-bottom: 2px solid #d580ff;
+      }
+    }
+  }
+}
