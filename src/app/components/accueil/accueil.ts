@@ -1,6 +1,5 @@
-import { Component, OnInit, OnDestroy, signal, inject } from '@angular/core';
+import { Component, OnInit, OnDestroy, signal, inject, AfterViewInit } from '@angular/core';
 import { UserService } from '../../services/user';
-import { application } from 'express';
 
 @Component({
   selector: 'app-accueil',
@@ -8,9 +7,9 @@ import { application } from 'express';
   templateUrl: './accueil.html',
   styleUrl: './accueil.scss'
 })
-export class AccueilComponent implements OnInit, OnDestroy {
+export class AccueilComponent implements OnInit, OnDestroy, AfterViewInit {
   private userService = inject(UserService);
-  
+
   user = signal<any>(null);
   error = signal<string | null>(null);
   loading = signal(true);
@@ -23,6 +22,7 @@ export class AccueilComponent implements OnInit, OnDestroy {
   currentTitleIndex = 0;
   currentTitle = signal<string>(this.titles[0]);
   private titleIntervalId: ReturnType<typeof setInterval> | null = null;
+  private intersectionObserver: IntersectionObserver | null = null;
 
   ngOnInit(): void {
     this.userService.getUser().subscribe({
@@ -45,9 +45,20 @@ export class AccueilComponent implements OnInit, OnDestroy {
     }
   }
 
+  ngAfterViewInit(): void {
+    // Rien à faire - les sections s'affichent directement
+  }
+
+  private setupIntersectionObserver(): void {
+    // Fonction désactivée - pas d'animations au scroll
+  }
+
   ngOnDestroy(): void {
     if (this.titleIntervalId) {
       clearInterval(this.titleIntervalId);
+    }
+    if (this.intersectionObserver) {
+      this.intersectionObserver.disconnect();
     }
   }
 }

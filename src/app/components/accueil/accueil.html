@@ -1,10 +1,90 @@
 <section class="accueil">
 
     <div class="accueil-container">
-      <h2>Je suis {{ user()?.firstName }} {{ user()?.lastName }}</h2>
-      <h3 class="animated-title">{{ currentTitle() }}</h3>
-      <p>{{ user()?.description }}</p>
+      <h1>Je suis {{ user()?.firstName }} {{ user()?.lastName }}</h1>
+      <h2 class="animated-title">Développeuse Full-Stack | Java • Angular</h2>
+      <p class="subtitle">Spécialisée en conception d'applications robustes et évolutives avec 2 ans d'expérience en alternance</p>
+      
       <button class="download-cv">Télécharger mon CV</button>
+
+      <!-- Scroll Indicator Arrow -->
+      <div class="scroll-indicator">
+        <span>Scroll</span>
+        <svg class="scroll-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
+
+      <!-- Stack Technique Section -->
+      <div class="tech-stack-section">
+        <h2>Stack Technique</h2>
+        <div class="tech-stack">
+          <div class="tech-badges">
+            <div class="badge">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java" title="Java">
+              <span>Java</span>
+            </div>
+            <div class="badge">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg" alt="Angular" title="Angular">
+              <span>Angular</span>
+            </div>
+            <div class="badge">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" alt="Spring Boot" title="Spring Boot">
+              <span>Spring Boot</span>
+            </div>
+            <div class="badge">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" title="PostgreSQL">
+              <span>PostgreSQL</span>
+            </div>
+            <div class="badge">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" title="Git">
+              <span>Git</span>
+            </div>
+            <div class="badge">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript" title="TypeScript">
+              <span>TypeScript</span>
+            </div>
+            <div class="badge">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker" title="Docker">
+              <span>Docker</span>
+            </div>
+            <div class="badge">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux" title="Linux">
+              <span>Linux</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Parcours & Expérience Section -->
+      <div class="parcours-section">
+        <h2>Parcours & Expérience</h2>
+        <div class="parcours">
+          <div class="parcours-item">
+            <div class="parcours-header">
+              <span class="parcours-title">📚 Bac +5 Full-Stack Angular/Java</span>
+              <span class="parcours-date">2024 - 2025</span>
+            </div>
+            <p class="parcours-subtitle">Openclassrooms • RNCP Niveau 7</p>
+          </div>
+
+          <div class="parcours-item">
+            <div class="parcours-header">
+              <span class="parcours-title">💼 2 ans d'expérience</span>
+              <span class="parcours-date">2022 - 2024</span>
+            </div>
+            <p class="parcours-subtitle">Alternance • Conceptrice Développeuse chez Innexa</p>
+          </div>
+
+          <div class="parcours-item">
+            <div class="parcours-header">
+              <span class="parcours-title">🌱 Atouts</span>
+              <span class="parcours-date">Soft Skills</span>
+            </div>
+            <p class="parcours-subtitle">Créative • Sérieuse • Curieuse • Travail d'équipe • Sens de l'écoute</p>
+          </div>
+        </div>
+      </div>
     </div>
-  
+
 </section>
