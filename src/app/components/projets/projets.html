@@ -1,0 +1,24 @@
+<section class="projets">
+  <h1>Mes Projets</h1>
+  
+  @if (loading()) {
+    <p>Chargement des projets...</p>
+  } @else if (error()) {
+    <div class="error">
+      <p>{{ error() }}</p>
+      <p><em>Le frontend fonctionne ! Il faut maintenant créer l'API backend.</em></p>
+    </div>
+  } @else if (projects().length === 0) {
+    <p>Aucun projet disponible pour le moment.</p>
+  } @else {
+    <ul>
+      @for (project of projects(); track project.id) {
+        <li>
+          <strong>{{ project.title }}</strong> : {{ project.description }}
+          <br />
+          <a [href]="project.githubLink" target="_blank">GitHub</a>
+        </li>
+      }
+    </ul>
+  }
+</section>

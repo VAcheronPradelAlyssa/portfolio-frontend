@@ -1,0 +1,14 @@
+<section class="accueil">
+  @if (loading()) {
+    <p>Chargement...</p>
+  } @else if (error()) {
+    <div class="error">
+      <p>{{ error() }}</p>
+      <p><em>Le frontend fonctionne ! Il faut maintenant créer le backend Spring Boot.</em></p>
+    </div>
+  } @else {
+    <h1>Bienvenue !</h1>
+    <p>Je suis {{ user()?.firstName }} {{ user()?.lastName }}, {{ user()?.title }}.</p>
+    <p>Description : {{ user()?.description }}</p>
+  }
+</section>
