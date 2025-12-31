@@ -1,0 +1,96 @@
+.accueil-container {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: 3rem;
+  background: radial-gradient(circle at 20% 20%, rgba(128, 0, 255, 0.2), transparent 30%),
+    radial-gradient(circle at 80% 0%, rgba(255, 0, 255, 0.15), transparent 25%),
+    #0b0316;
+  color: white;
+  min-height: 100vh;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='360'%3E%3Cdefs%3E%3ClinearGradient id='g1' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0%25' stop-color='rgba(255,255,255,0.9)'/%3E%3Cstop offset='40%25' stop-color='rgba(140,80,255,0.35)'/%3E%3Cstop offset='100%25' stop-color='rgba(140,80,255,0.14)'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cstyle%3Etext%7Bfont-family:%27Poppins%27,sans-serif;font-size:18px;font-weight:600;letter-spacing:1px;%7D%3C/style%3E%3Ctext x='40' y='30' fill='url(%23g1)'%3E%3Ctspan x='40' dy='0'%3EN%3C/tspan%3E%3Ctspan x='40' dy='22'%3Eo%3C/tspan%3E%3Ctspan x='40' dy='22'%3Eu%3C/tspan%3E%3Ctspan x='40' dy='22'%3Ep%3C/tspan%3E%3Ctspan x='40' dy='22'%3Ei%3C/tspan%3E%3Ctspan x='40' dy='22'%3Ee%3C/tspan%3E%3Ctspan x='40' dy='26'%3E%26%23160;%3C/tspan%3E%3Ctspan x='40' dy='22'%3El%3C/tspan%3E%3Ctspan x='40' dy='22'%3Ea%3C/tspan%3E%3Ctspan x='40' dy='26'%3E%26%23160;%3C/tspan%3E%3Ctspan x='40' dy='22'%3Ep%3C/tspan%3E%3Ctspan x='40' dy='22'%3El%3C/tspan%3E%3Ctspan x='40' dy='22'%3Eu%3C/tspan%3E%3Ctspan x='40' dy='22'%3Es%3C/tspan%3E%3Ctspan x='40' dy='26'%3E%26%23160;%3C/tspan%3E%3Ctspan x='40' dy='22'%3Eb%3C/tspan%3E%3Ctspan x='40' dy='22'%3Ee%3C/tspan%3E%3Ctspan x='40' dy='22'%3El%3C/tspan%3E%3Ctspan x='40' dy='22'%3El%3C/tspan%3E%3Ctspan x='40' dy='22'%3Ee%3C/tspan%3E%3C/text%3E%3Ctext x='140' y='30' fill='rgba(120,255,255,0.26)'%3E%3Ctspan x='140' dy='0'%3EN%3C/tspan%3E%3Ctspan x='140' dy='22'%3Eo%3C/tspan%3E%3Ctspan x='140' dy='22'%3Eu%3C/tspan%3E%3Ctspan x='140' dy='22'%3Ep%3C/tspan%3E%3Ctspan x='140' dy='22'%3Ei%3C/tspan%3E%3Ctspan x='140' dy='22'%3Ee%3C/tspan%3E%3Ctspan x='140' dy='26'%3E%26%23160;%3C/tspan%3E%3Ctspan x='140' dy='22'%3El%3C/tspan%3E%3Ctspan x='140' dy='22'%3Ea%3C/tspan%3E%3Ctspan x='140' dy='26'%3E%26%23160;%3C/tspan%3E%3Ctspan x='140' dy='22'%3Ep%3C/tspan%3E%3Ctspan x='140' dy='22'%3El%3C/tspan%3E%3Ctspan x='140' dy='22'%3Eu%3C/tspan%3E%3Ctspan x='140' dy='22'%3Es%3C/tspan%3E%3Ctspan x='140' dy='26'%3E%26%23160;%3C/tspan%3E%3Ctspan x='140' dy='22'%3Eb%3C/tspan%3E%3Ctspan x='140' dy='22'%3Ee%3C/tspan%3E%3Ctspan x='140' dy='22'%3El%3C/tspan%3E%3Ctspan x='140' dy='22'%3El%3C/tspan%3E%3Ctspan x='140' dy='22'%3Ee%3C/tspan%3E%3C/text%3E%3C/svg%3E"),
+      repeating-linear-gradient(90deg, rgba(120, 255, 255, 0.08) 0 1px, transparent 1px 24px);
+    background-size: 240px 360px, 160% 100%;
+    background-repeat: repeat;
+    opacity: 0.6;
+    animation: matrix-fall 18s linear infinite;
+    mix-blend-mode: screen;
+    pointer-events: none;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(110, 0, 255, 0.08), transparent 55%);
+    pointer-events: none;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .animated-title {
+    font-size: 1.8rem;
+    color: #d580ff; // Violet clair
+    font-weight: bold;
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
+
+  .download-cv {
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    background-color: #d580ff;
+    color: #1a0033;
+    border:  none;
+    border-radius:  5px;
+    font-size: 1.2rem;
+    font-weight:  bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #b060d0;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity:  0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes matrix-fall {
+  from {
+    background-position: 0 0, 0 0;
+  }
+  to {
+    background-position: 0 200%, 0 260%;
+  }
+}

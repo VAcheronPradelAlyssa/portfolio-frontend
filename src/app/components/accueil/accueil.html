@@ -7,8 +7,12 @@
       <p><em>Le frontend fonctionne ! Il faut maintenant créer le backend Spring Boot.</em></p>
     </div>
   } @else {
-    <h1>Bienvenue !</h1>
-    <p>Je suis {{ user()?.firstName }} {{ user()?.lastName }}, {{ user()?.title }}.</p>
-    <p>Description : {{ user()?.description }}</p>
+    <div class="accueil-container">
+      <h1>Bienvenue !</h1>
+      <h2>Je suis {{ user()?.firstName }} {{ user()?.lastName }}</h2>
+      <h3 class="animated-title">{{ currentTitle() }}</h3>
+      <p>{{ user()?.description }}</p>
+      <button class="download-cv">Télécharger mon CV</button>
+    </div>
   }
 </section>

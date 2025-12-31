@@ -1,5 +1,6 @@
-import { Component, OnInit, signal, inject } from '@angular/core';
+import { Component, OnInit, OnDestroy, signal, inject } from '@angular/core';
 import { UserService } from '../../services/user';
+import { application } from 'express';
 
 @Component({
   selector: 'app-accueil',
@@ -7,12 +8,21 @@ import { UserService } from '../../services/user';
   templateUrl: './accueil.html',
   styleUrl: './accueil.scss'
 })
-export class AccueilComponent implements OnInit {
+export class AccueilComponent implements OnInit, OnDestroy {
   private userService = inject(UserService);
   
   user = signal<any>(null);
   error = signal<string | null>(null);
   loading = signal(true);
+  titles: string[] = [
+    'Développeuse Fullstack Java/Angular 💻',
+    'Conceptrice Développeuse d\'applications web et mobile 📱',
+    'Passionnée automobile 🚘',
+    'Pêcheuse 🎣',
+  ];
+  currentTitleIndex = 0;
+  currentTitle = signal<string>(this.titles[0]);
+  private titleIntervalId: ReturnType<typeof setInterval> | null = null;
 
   ngOnInit(): void {
     this.userService.getUser().subscribe({
@@ -26,5 +36,18 @@ export class AccueilComponent implements OnInit {
         this.loading.set(false);
       }
     });
+
+    if (typeof window !== 'undefined') {
+      this.titleIntervalId = setInterval(() => {
+        this.currentTitleIndex = (this.currentTitleIndex + 1) % this.titles.length;
+        this.currentTitle.set(this.titles[this.currentTitleIndex]);
+      }, 2000);
+    }
+  }
+
+  ngOnDestroy(): void {
+    if (this.titleIntervalId) {
+      clearInterval(this.titleIntervalId);
+    }
   }
 }
