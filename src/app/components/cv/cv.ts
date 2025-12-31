@@ -1,12 +1,17 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, OnInit, signal, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-cv',
   imports: [],
   templateUrl: './cv.html',
-  styleUrl: './cv.scss'
+  styleUrl: './cv.scss',
+  host: {
+    'class': 'cv-theme'
+  }
 })
 export class CvComponent implements OnInit {
+  constructor(private renderer: Renderer2) {}
+
   ngOnInit(): void {
     // Animation des barres de stats au chargement
     if (typeof document !== 'undefined') {
