@@ -53,30 +53,31 @@ export class AccueilComponent implements OnInit, OnDestroy, AfterViewInit {
       const charIndex = this.charIndex();
 
       if (!isDeleting) {
-        // Typing forward
         if (charIndex < currentText.length) {
           this.displayedText.set(currentText.substring(0, charIndex + 1));
           this.charIndex.set(charIndex + 1);
-          this.typingIntervalId = setTimeout(typeCharacter, 100);
+          // Vitesse variable pour plus de réalisme
+          const speed = Math.random() * 50 + 80; // Entre 80 et 130ms
+          this.typingIntervalId = setTimeout(typeCharacter, speed);
         } else {
-          // Phrase complete, pause before deleting
+          // Pause plus longue pour lire la phrase complète
           this.typingIntervalId = setTimeout(() => {
             this.isDeleting.set(true);
-            this.typingIntervalId = setTimeout(typeCharacter, 100);
-          }, 2000);
+            this.typingIntervalId = setTimeout(typeCharacter, 50);
+          }, 2500); // 2.5 secondes de pause
         }
       } else {
-        // Deleting backward
         if (charIndex > 0) {
           this.displayedText.set(currentText.substring(0, charIndex - 1));
           this.charIndex.set(charIndex - 1);
-          this.typingIntervalId = setTimeout(typeCharacter, 100);
+          // Suppression plus rapide
+          this.typingIntervalId = setTimeout(typeCharacter, 50);
         } else {
-          // Move to next phrase
           this.currentPhraseIndex.set((this.currentPhraseIndex() + 1) % this.rotatingPhrases.length);
           this.isDeleting.set(false);
           this.charIndex.set(0);
-          this.typingIntervalId = setTimeout(typeCharacter, 100);
+          // Petite pause avant de recommencer
+          this.typingIntervalId = setTimeout(typeCharacter, 500);
         }
       }
     };
