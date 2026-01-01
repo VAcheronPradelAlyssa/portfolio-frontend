@@ -1,1 +1,532 @@
-<p>apropos works!</p>
+<div class="apropos-garage">
+  <!-- Header -->
+  <div class="garage-header">
+    <h1 class="pixel-title">🎮 LE GARAGE D'ALYSSA 🎣</h1>
+    <p class="garage-subtitle">Bienvenue dans mon univers !  Entre passion automobile, pêche et gaming... </p>
+  </div>
+<!-- ZONE 1: Top 5 Voitures -->
+<section class="passion-section cars-section">
+  <div class="section-header">
+    <h2 class="section-title">🚗 TOP 5 - MES VOITURES PRÉFÉRÉES</h2>
+    <p class="section-subtitle">De la 5ème place au podium ultime... Roulement de tambour ! 🥁</p>
+  </div>
+
+  <div class="cars-countdown">
+
+    <!-- Position 5: Citroën Xsara Phase 1 -->
+    <div class="car-card rank-5">
+      <div class="car-rank">#5</div>
+      <div class="car-content">
+        <img src="/xsara.jpg" alt="Ma Citroën Xsara Phase 1" class="car-image" (click)="openLightbox('/xsara.jpg')">
+        <div class="car-info">
+          <h3 class="car-name">Citroën Xsara Phase 1</h3>
+          <p class="car-year">1997–2000 • Ma première voiture ❤️</p>
+          <p class="car-description">
+            Ma toute première voiture ! Compacte française emblématique de la fin des années 90,
+            simple, confortable et honnête. Pratique, fiable et
+            attachante. Une vraie voiture du quotidien, pleine de souvenirs ❤️
+            <br><br>
+            <em>Ce jour-là au parking, tout le monde a vu son potentiel : seules des grosses voitures ont osé se garer à côté. 😎</em>
+          </p>
+
+          <div class="car-specs">
+            <span class="spec-badge">❤️ Ma première</span>
+            <span class="spec-badge">🇫🇷 Française</span>
+            <span class="spec-badge">🔧 Simple & fiable</span>
+          </div>
+
+          <!-- Mention spéciale Windows CE -->
+          <div class="special-mention">
+            <h4>🎖️ Mention Spéciale : Citroën Xsara Windows CE (2000)</h4>
+            <p>
+              Présentée au Salon de Genève 2000, la <strong>Xsara Windows CE</strong> est une série limitée
+              expérimentale produite à environ <strong>497 exemplaires</strong>. Développée en partenariat
+              avec Microsoft, Clarion et Ericsson, elle embarquait l’ordinateur de bord <em>Auto PC</em>
+              fonctionnant sous <strong>Windows CE</strong> — une première mondiale pour une voiture de série.
+              Navigation GPS, téléphone GSM, commandes vocales et SMS : une technologie en avance sur son temps,
+              brillante mais parfois capricieuse. Un véritable ovni automobile et un jalon de l’histoire
+              du multimédia embarqué.
+            </p>
+          </div>
+
+          <!-- Héritage Rallye -->
+          <div class="special-mention">
+            <h4>🏁 Héritage Rallye</h4>
+            <p>
+              Même si la Xsara de série n’a rien d’une voiture de course, son nom reste associé à la
+              mythique <strong>Citroën Xsara WRC</strong>, qui a dominé le championnat du monde des rallyes
+              entre 2003 et 2006 avec Sébastien Loeb. Un héritage sportif prestigieux pour une voiture
+              du quotidien.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Position 4: Mazda 323 F -->
+    <div class="car-card rank-4 podium">
+      <div class="car-rank">#4</div>
+      <div class="car-content">
+        <img src="/assets/cars/Mazda_323_F_BG_GT_1989.jpg" alt="Mazda 323 F" class="car-image" (click)="openLightbox('/assets/cars/Mazda_323_F_BG_GT_1989.jpg')">
+        <div class="car-info">
+          <h3 class="car-name">Mazda 323 F (BA)</h3>
+          <p class="car-year">1994–1998</p>
+          <p class="car-description">
+            La voiture de mon enfance ! ✨ Son design sportif des années 90 et ses mythiques
+            <strong>phares pop-up</strong> en faisaient une japonaise à part. Fiable, plaisante
+            à conduire et pleine de caractère. Un souvenir gravé à jamais 🚗💫
+          </p>
+          <div class="car-specs">
+            <span class="spec-badge">👁️ Phares pop-up</span>
+            <span class="spec-badge">👶 Enfance</span>
+            <span class="spec-badge">🇯🇵 Japonaise</span>
+            <span class="spec-badge">⚡ Look sportif</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Position 3: Simca 1000 -->
+    <div class="car-card rank-3 podium">
+      <div class="car-rank">🥉 #3</div>
+      <div class="car-content">
+        <img src="/assets/cars/1963_Simca_1000.jpg" alt="Simca 1000" class="car-image" (click)="openLightbox('/assets/cars/1963_Simca_1000.jpg')">
+        <div class="car-info">
+          <h3 class="car-name">Simca 1000</h3>
+          <p class="car-year">1961–1978</p>
+          <p class="car-description">
+            Mon rêve absolu 😈 Principalement pour embêter mon père qui DÉTESTE cette voiture !
+            Moteur arrière, légère, vive… et totalement imprévisible sur route glissante.
+            Une vraie spécialiste du tête-à-queue, surtout sur le verglas ❄️🌀
+          </p>
+          <div class="car-specs">
+            <span class="spec-badge">😈 Provocation familiale</span>
+            <span class="spec-badge">🌀 Survirage</span>
+            <span class="spec-badge">❄️ Dangereuse sur verglas</span>
+            <span class="spec-badge">🇫🇷 Simca</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+ <!-- Position 2: Dodge Pickup (années 50-70) -->
+<div class="car-card rank-2 podium">
+  <div class="car-rank">🥈 #2</div>
+  <div class="car-content">
+    <!-- Conteneur pour les 2 images -->
+    <div class="car-images-container">
+      <img src="/assets/cars/dodge.jpg" 
+           alt="Dodge Pickup années 57-59" 
+           class="car-image"
+           (click)="openLightbox('/assets/cars/dodge.jpg')"
+           loading="lazy">
+      <img src="/assets/cars/dodge70.jpg" 
+           alt="Dodge Pickup années 70" 
+           class="car-image"
+           (click)="openLightbox('/assets/cars/dodge70.jpg')"
+           loading="lazy">
+    </div>
+    
+    <div class="car-info">
+      <h3 class="car-name">Dodge Pickup (Séries B, C, D et W)</h3>
+      <p class="car-year">1950–1979 • 3 décennies de légende américaine 🇺🇸</p>
+      <p class="car-description">
+        Trois décennies d'excellence américaine !  Des arrondis chromés des années 50 
+        (séries B et C) aux lignes carrées massives des années 70 (séries D/W), 
+        ces pickups incarnent le rêve américain :  V8 rugissants (du 3.8L au monstrueux 
+        7.2L "440 Magnum"), construction en acier épais, fiabilité légendaire et 
+        consommation...  historique (jusqu'à 30L/100km !).  Du ranch texan aux 
+        chantiers, ces monuments roulants ont bâti l'Amérique 💪🔥🛻
+      </p>
+      <div class="car-specs">
+        <span class="spec-badge">💪 V8 Power</span>
+        <span class="spec-badge">🇺🇸 1950-1979</span>
+        <span class="spec-badge">🛻 Légende US</span>
+        <span class="spec-badge">⛽ 30L/100km</span>
+        <span class="spec-badge">🏆 Indestructible</span>
+      </div>
+      
+      <!-- Timeline des générations -->
+      <div class="generations-timeline">
+        <h4>📅 Les générations mythiques</h4>
+        <div class="timeline-items">
+          <div class="timeline-item">
+            <span class="timeline-year">1950-1953</span>
+            <span class="timeline-name">Série B "Pilot House"</span>
+            <p>Design post-guerre, cabine spacieuse, chrome partout ✨</p>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-year">1954-1956</span>
+            <span class="timeline-name">Série C (1ère phase)</span>
+            <p>Premiers V8 Red Ram, design arrondi typique des 50s 🎸</p>
+          </div>
+          <div class="timeline-item highlight">
+            <span class="timeline-year">1957-1959</span>
+            <span class="timeline-name">Série C/D "Sweptside" ⭐</span>
+            <p>
+              Mes préférées absolues !   L'âge d'or du design américain :  
+              ailerons inspirés des avions, chrome à profusion, calandre majestueuse, 
+              lignes sculpturales.   Le V8 315 ci Red Ram rugit avec 204 chevaux.  
+              Ces pickups sont de véritables œuvres d'art roulantes de l'ère spatiale !  🚀✨👑
+            </p>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-year">1960-1971</span>
+            <span class="timeline-name">Série D/W (1ère gen)</span>
+            <p>Modernisation, lignes plus carrées, V8 puissants (318, 383 ci) 🏗️</p>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-year">1972-1979</span>
+            <span class="timeline-name">Série D/W (2ème gen)</span>
+            <p>Design carré iconique, V8 440 Magnum (7.2L), robustesse légendaire 🔥</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Position 1: Rolls-Royce Phantom -->
+<div class="car-card rank-1 champion">
+  <div class="car-rank">🥇 #1</div>
+  <div class="car-content">
+    
+    <!-- Galerie de 3 photos -->
+    <div class="car-gallery-triple">
+      <!-- Photo 1: 1925 Phantom I -->
+      <div class="gallery-item">
+        <img src="/assets/cars/Rolls_Royce_Phantom_1925.jpg" 
+             alt="Rolls-Royce Phantom I 1925" 
+             class="car-image-gallery"
+             (click)="openLightbox('/assets/cars/Rolls_Royce_Phantom_1925.jpg')">
+        <span class="gallery-label">1925 - Phantom I</span>
+      </div>
+      
+      <!-- Photo 2: Années 60 (Phantom V) -->
+      <div class="gallery-item highlight-gallery">
+        <img src="/assets/cars/1962_Rolls-Royce_Phantom_V_Coupe_James_Young.jpg" 
+             alt="Rolls-Royce Phantom V 1962" 
+             class="car-image-gallery"
+             (click)="openLightbox('/assets/cars/1962_Rolls-Royce_Phantom_V_Coupe_James_Young.jpg')">
+        <span class="gallery-label">1962 - Phantom V ⭐</span>
+      </div>
+      
+      <!-- Photo 3: 2025 Phantom VIII -->
+      <div class="gallery-item">
+        <img src="/assets/cars/403983-2025-rolls-royce-phantom.jpg" 
+             alt="Rolls-Royce Phantom VIII 2025" 
+             class="car-image-gallery"
+             (click)="openLightbox('/assets/cars/403983-2025-rolls-royce-phantom.jpg')">
+        <span class="gallery-label">2025 - Phantom VIII</span>
+      </div>
+    </div>
+    
+    <div class="car-info">
+      <h3 class="car-name">Rolls-Royce Phantom (Toutes générations)</h3>
+      <p class="car-year">1925–2025 • 100 ans de légende absolue 👑</p>
+      <p class="car-description">
+        Le sommet absolu de l'automobile de luxe depuis un siècle !  👑✨ De la Phantom I (1925) 
+        aux dernières Phantom VIII (2025), chaque génération incarne l'excellence britannique :  
+        silence de roulage légendaire (plus silencieux qu'une bibliothèque à 100 km/h), 
+        artisanat d'exception (6 mois de fabrication par voiture), moteur V12 d'une douceur 
+        inégalée, portières qui se ferment d'un effleurement.  La voiture des rois, reines, 
+        présidents et milliardaires. Un monument vivant de perfection automobile 💎🇬🇧
+      </p>
+      <div class="car-specs">
+        <span class="spec-badge">👑 Royale</span>
+        <span class="spec-badge">🎂 100 ans (1925-2025)</span>
+        <span class="spec-badge">💎 Luxe ultime</span>
+        <span class="spec-badge">🇬🇧 British Excellence</span>
+        <span class="spec-badge">🤫 Silence absolu</span>
+        <span class="spec-badge">✨ Perfection</span>
+      </div>
+      
+      <!-- Timeline des générations Phantom -->
+      <div class="generations-timeline">
+        <h4>👑 Un siècle d'excellence (8 générations)</h4>
+        <div class="timeline-items">
+          <div class="timeline-item">
+            <span class="timeline-year">1925-1931</span>
+            <span class="timeline-name">Phantom I</span>
+            <p>La première !  Moteur 6 cylindres 7.7L, carrosserie sur mesure, luxe absolu</p>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-year">1929-1936</span>
+            <span class="timeline-name">Phantom II</span>
+            <p>Châssis renforcé, design Art Déco, préférée des maharadjas</p>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-year">1936-1939</span>
+            <span class="timeline-name">Phantom III</span>
+            <p>Premier V12 Rolls-Royce, suspension indépendante, avant-gardiste</p>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-year">1950-1956</span>
+            <span class="timeline-name">Phantom IV</span>
+            <p>Ultra-rare (18 exemplaires ! ), réservée aux têtes couronnées 👑</p>
+          </div>
+          <div class="timeline-item highlight">
+            <span class="timeline-year">1959-1968</span>
+            <span class="timeline-name">Phantom V ⭐</span>
+            <p>
+              Icône des années 60 ! V8 6.2L puis 6.7L, empattement de 3. 7m, 
+              limousine d'État, utilisée par la Reine Elizabeth II.  Design majestueux, 
+              présence royale absolue 🎩✨
+            </p>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-year">1968-1990</span>
+            <span class="timeline-name">Phantom VI</span>
+            <p>Production la plus longue (22 ans), V8 6.75L, dernière "classique"</p>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-year">2003-2017</span>
+            <span class="timeline-name">Phantom VII</span>
+            <p>Renaissance moderne, V12 6.75L, aluminium, technologie XXI° siècle</p>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-year">2017-2025</span>
+            <span class="timeline-name">Phantom VIII</span>
+            <p>Génération actuelle, V12 6.75L biturbo 571ch, architecture modulaire</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+
+  <!-- Mentions spéciales -->
+  <div class="special-cars-section">
+    <h3 class="special-title">🎖️ Mentions Spéciales du Garage</h3>
+
+    <div class="special-cars-grid">
+      <div class="special-car-card">
+        <img src="/assets/cars/Peugeot_504_pick-up_vert.JPG" alt="Peugeot 504 Pickup" class="special-car-image">
+        <div class="special-car-info">
+          <h4>Peugeot 504 Pickup</h4>
+          <p class="special-year">1979–2006</p>
+          <p class="special-description">
+            Le pickup indestructible par excellence. Fabriqué pendant des décennies,
+            star des pistes africaines et du désert. Une légende de robustesse à la française 🇫🇷🏜️
+          </p>
+          <span class="special-badge">🛠️ Increvable</span>
+          <span class="special-badge">🏆 Légende africaine</span>
+        </div>
+      </div>
+
+      <div class="special-car-card highlight">
+        <img src="/assets/cars/Twingo.JPG" alt="Renault Twingo Phase 1" class="special-car-image">
+        <div class="special-car-info">
+          <h4>Renault Twingo Phase 1 ⭐</h4>
+          <p class="special-year">1993–2007</p>
+          <p class="special-description">
+            Une révolution sur roues 🌟 Design culte, modularité géniale et une boîte automatique
+            Easy aussi innovante… que catastrophique 😂 Une voiture imparfaite mais profondément
+            attachante. Culte absolu ❤️
+          </p>
+          <span class="special-badge">🌟 Icône</span>
+          <span class="special-badge">😊 Design unique</span>
+          <span class="special-badge">🤖 Boîte Easy</span>
+          <span class="special-badge">❤️ Culte</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- ZONE 2: Pêche -->
+  <section class="passion-section fishing-section">
+    <div class="section-header">
+      <h2 class="section-title">🎣 MA PASSION :  LA PÊCHE</h2>
+      <p class="section-subtitle">Entre patience, technique et communion avec la nature... </p>
+    </div>
+
+    <div class="fishing-content">
+      <div class="fishing-text">
+        <h3>🌊 Secrétaire de l'AAPPMA Brochet Basse Vilaine</h3>
+        <p>
+          Depuis novembre 2024, je m'investis pleinement dans la préservation des milieux aquatiques 
+          et la promotion de la pêche responsable en Bretagne.
+        </p>
+        
+        <h3>🎣 Mes techniques préférées</h3>
+        <div class="fishing-techniques">
+          <div class="technique-card">
+            <span class="technique-icon">🐟</span>
+            <h4>Pêche à la carpe</h4>
+            <p>Ma spécialité !  Sessions longues, montages soignés, stratégie et patience.</p>
+          </div>
+          <div class="technique-card">
+            <span class="technique-icon">🎣</span>
+            <h4>Pêche aux leurres</h4>
+            <p>Carnassiers au leurre :  brochet, perche, sandre...  Action et technique !</p>
+          </div>
+        </div>
+
+        <h3>🌱 Mon engagement écologique</h3>
+        <ul class="ecological-actions">
+          <li>🌿 Rempoissonnement des plans d'eau</li>
+          <li>⚔️ Lutte contre le braconnage</li>
+          <li>🛡️ Protection contre les espèces invasives</li>
+          <li>♻️ Préservation des écosystèmes aquatiques</li>
+        </ul>
+      </div>
+
+      <div class="fishing-gallery">
+        <h3>📸 Mes plus belles prises</h3>
+        <div class="photo-grid">
+          <div class="photo-card">
+            <img src="/assets/fishing/photo1.jpg" alt="Pêche 1">
+            <p class="photo-caption">Carpe miroir 15kg - Étang de Bretagne</p>
+          </div>
+          <div class="photo-card">
+            <img src="/assets/fishing/photo2.jpg" alt="Pêche 2">
+            <p class="photo-caption">Brochet au leurre - Rivière de la Vilaine</p>
+          </div>
+          <div class="photo-card">
+            <img src="/assets/fishing/photo3.jpg" alt="Pêche 3">
+            <p class="photo-caption">Session de nuit - Plan d'eau</p>
+          </div>
+          <div class="photo-card">
+            <img src="/assets/fishing/photo4.jpg" alt="Pêche 4">
+            <p class="photo-caption">Matériel et montages carpe</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ZONE 3: Gaming -->
+  <section class="passion-section gaming-section">
+    <div class="section-header">
+      <h2 class="section-title">🎮 MES JEUX VIDÉO PRÉFÉRÉS</h2>
+      <p class="section-subtitle">Gameuse depuis toujours !  Voici mes univers favoris...</p>
+    </div>
+
+    <div class="steam-stats">
+      <div class="steam-header">
+        <img src="/assets/steam-logo.png" alt="Steam" class="steam-logo">
+        <div class="steam-info">
+          <h3>Mon profil Steam</h3>
+          <p>🕐 +1000 heures de jeu cumulées</p>
+          <p>🎯 Achievements hunter</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="games-grid">
+      <!-- Jeu 1 -->
+      <div class="game-card">
+        <img src="/assets/games/terraria.jpg" alt="Terraria" class="game-cover">
+        <div class="game-info">
+          <h3>Terraria</h3>
+          <p class="game-hours">⏱️ 250+ heures</p>
+          <p class="game-description">
+            Mon jeu préféré ! Exploration, construction, combat...  Un univers infini en 2D. 
+          </p>
+          <div class="game-tags">
+            <span class="tag">Sandbox</span>
+            <span class="tag">Aventure</span>
+            <span class="tag">Créatif</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jeu 2 -->
+      <div class="game-card">
+        <img src="/assets/games/minecraft.jpg" alt="Minecraft" class="game-cover">
+        <div class="game-info">
+          <h3>Minecraft</h3>
+          <p class="game-hours">⏱️ 300+ heures</p>
+          <p class="game-description">
+            Le classique indémodable.  Redstone, constructions épiques et exploration sans fin.
+          </p>
+          <div class="game-tags">
+            <span class="tag">Sandbox</span>
+            <span class="tag">Survie</span>
+            <span class="tag">Créatif</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jeu 3 -->
+      <div class="game-card">
+        <img src="/assets/games/stardew.jpg" alt="Stardew Valley" class="game-cover">
+        <div class="game-info">
+          <h3>Stardew Valley</h3>
+          <p class="game-hours">⏱️ 180+ heures</p>
+          <p class="game-description">
+            La zen attitude ! Farming, pêche (bien sûr ! ), relations sociales...  Relaxant et addictif.
+          </p>
+          <div class="game-tags">
+            <span class="tag">Farming</span>
+            <span class="tag">RPG</span>
+            <span class="tag">Chill</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jeu 4 -->
+      <div class="game-card">
+        <img src="/assets/games/hollowknight.jpg" alt="Hollow Knight" class="game-cover">
+        <div class="game-info">
+          <h3>Hollow Knight</h3>
+          <p class="game-hours">⏱️ 120+ heures</p>
+          <p class="game-description">
+            Chef-d'œuvre du metroidvania. Difficile mais tellement satisfaisant !
+          </p>
+          <div class="game-tags">
+            <span class="tag">Metroidvania</span>
+            <span class="tag">Challenge</span>
+            <span class="tag">Art</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jeu 5 -->
+      <div class="game-card">
+        <img src="/assets/games/skyrim.jpg" alt="Skyrim" class="game-cover">
+        <div class="game-info">
+          <h3>The Elder Scrolls V: Skyrim</h3>
+          <p class="game-hours">⏱️ 200+ heures</p>
+          <p class="game-description">
+            "I used to be an adventurer like you..." Un monde ouvert légendaire.
+          </p>
+          <div class="game-tags">
+            <span class="tag">RPG</span>
+            <span class="tag">Open World</span>
+            <span class="tag">Épique</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jeu 6 -->
+      <div class="game-card">
+        <img src="/assets/games/zelda.jpg" alt="Zelda BOTW" class="game-cover">
+        <div class="game-info">
+          <h3>Zelda:  Breath of the Wild</h3>
+          <p class="game-hours">⏱️ 150+ heures</p>
+          <p class="game-description">
+            Nintendo à son meilleur.  Exploration libre et gameplay parfait.
+          </p>
+          <div class="game-tags">
+            <span class="tag">Aventure</span>
+            <span class="tag">Open World</span>
+            <span class="tag">Nintendo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Lightbox pour afficher les images en grand -->
+@if (lightboxImage()) {
+  <div class="lightbox-overlay" (click)="closeLightbox()">
+    <div class="lightbox-content">
+      <button class="lightbox-close" (click)="closeLightbox()" aria-label="Fermer">✕</button>
+      <img [src]="lightboxImage()" alt="Image agrandie" class="lightbox-image">
+    </div>
+  </div>
+}

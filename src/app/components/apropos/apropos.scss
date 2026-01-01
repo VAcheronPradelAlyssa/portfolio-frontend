@@ -1,0 +1,1071 @@
+// Import de la police pixel art
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.apropos-garage {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 100%);
+  color: #f4e8d0;
+  
+  // Fond avec screenshot Terraria (optionnel)
+  &::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: url('/assets/terraria-screenshot.jpg') center/cover no-repeat;
+    opacity: 0.05;
+    filter: blur(8px);
+    z-index: -1;
+  }
+}
+
+// Header du garage
+.garage-header {
+  text-align: center;
+  padding: 4rem 2rem 3rem;
+  background: 
+    linear-gradient(135deg, rgba(139, 69, 19, 0.3), rgba(61, 43, 34, 0.3)),
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(255, 215, 0, 0.03) 10px,
+      rgba(255, 215, 0, 0.03) 20px
+    );
+  border-bottom: 6px solid #8b4513;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.pixel-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size:  2.5rem;
+  color: #ffd700;
+  text-shadow: 
+    4px 4px 0 #8b4513,
+    -2px -2px 0 #8b4513;
+  margin-bottom: 1.5rem;
+  animation: neon-flicker 3s ease-in-out infinite;
+}
+
+.garage-subtitle {
+  font-size: 1.3rem;
+  color: rgba(244, 232, 208, 0.9);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+// Sections communes
+.passion-section {
+  padding: 4rem 2rem;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom:  0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(139, 69, 19, 0.5),
+      transparent
+    );
+  }
+}
+
+.section-header {
+  text-align:  center;
+  margin-bottom:  3rem;
+}
+
+.section-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2rem;
+  color: #ffd700;
+  text-shadow:  3px 3px 0 #8b4513;
+  margin-bottom: 1rem;
+  animation: slideInFromTop 0.8s ease-out;
+}
+
+.section-subtitle {
+  font-size:  1.2rem;
+  color: rgba(244, 232, 208, 0.8);
+  font-style: italic;
+}
+
+// ============================================
+// ZONE 1: VOITURES
+// ============================================
+
+.cars-section {
+  background: 
+    linear-gradient(180deg, rgba(50, 50, 50, 0.3), rgba(30, 30, 30, 0.3)),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h60v60H0z' fill='%23222'/%3E%3Cpath d='M30 0L0 30h60L30 0z' fill='%23333'/%3E%3C/svg%3E");
+  background-size: 100% 100%, 60px 60px;
+}
+
+.cars-countdown {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.car-card {
+  display: flex;
+  gap: 2rem;
+  background: 
+    linear-gradient(135deg, rgba(60, 60, 60, 0.9), rgba(40, 40, 40, 0.9));
+  border:  4px solid #555;
+  border-left: 8px solid #888;
+  padding: 4rem 3rem;
+  border-radius: 8px;
+  box-shadow: 
+    0 8px 20px rgba(0, 0, 0, 0.5),
+    inset 0 2px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left:  0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #888, transparent);
+  }
+  
+  &:hover {
+    transform: translateX(10px);
+    border-left-color: #ffd700;
+    box-shadow: 
+      0 12px 30px rgba(0, 0, 0, 0.7),
+      -8px 0 20px rgba(255, 215, 0, 0.3);
+  }
+  
+  // Podium styling
+  &.podium {
+    border-color: #cd7f32;
+    background: linear-gradient(135deg, rgba(80, 60, 40, 0.9), rgba(60, 45, 30, 0.9));
+    
+    &:hover {
+      border-color: #ffd700;
+    }
+  }
+  
+  &.rank-3 {
+    border-left-color: #cd7f32;
+  }
+  
+  &.rank-2 {
+    border-left-color: #c0c0c0;
+  }
+  
+  &.champion {
+    border:  6px solid #ffd700;
+    background: 
+      linear-gradient(135deg, rgba(100, 80, 20, 0.9), rgba(80, 60, 10, 0.9)),
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 20px,
+        rgba(255, 215, 0, 0.05) 20px,
+        rgba(255, 215, 0, 0.05) 40px
+      );
+    box-shadow: 
+      0 12px 40px rgba(255, 215, 0, 0.5),
+      inset 0 0 30px rgba(255, 215, 0, 0.1);
+    
+    .car-rank {
+      background: linear-gradient(135deg, #ffd700, #ffed4e);
+      color: #000;
+      font-size: 2rem;
+      animation: pulse-gold 2s ease-in-out infinite;
+    }
+    
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: 0 16px 50px rgba(255, 215, 0, 0.7);
+    }
+  }
+}
+
+.car-rank {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.8rem;
+  color: #ffd700;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+  height: fit-content;
+  text-shadow: 2px 2px 0 #000;
+  border: 3px solid rgba(255, 215, 0, 0.3);
+  flex-shrink: 0;
+}
+
+.car-content {
+  display: flex;
+  gap: 3rem;
+  flex: 1;
+  align-items: flex-start;
+}
+
+// Conteneur pour plusieurs images
+.car-images-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  flex-shrink: 0;
+  width: 450px;
+}
+
+.car-image {
+  width: 450px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 4px solid #555;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  cursor: pointer;
+  
+  &:hover {
+    transform: scale(1.05);
+    border-color: #ffd700;
+  }
+}
+
+.car-info {
+  flex: 1;
+  padding-top: 1rem;
+}
+
+.car-name {
+  font-size: 1.8rem;
+  color: #ffd700;
+  margin:  0 0 0.5rem 0;
+  text-shadow: 2px 2px 0 #000;
+}
+
+.car-year {
+  font-size: 1rem;
+  color: #87ceeb;
+  margin: 0 0 1rem 0;
+  font-weight: 600;
+}
+
+.car-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgba(244, 232, 208, 0.9);
+  margin: 1rem 0;
+}
+
+.car-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.spec-badge {
+  background: rgba(255, 215, 0, 0.2);
+  border: 2px solid rgba(255, 215, 0, 0.5);
+  color: #ffd700;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight:  600;
+}
+
+// ============================================
+// ZONE 2: PÊCHE
+// ============================================
+
+.fishing-section {
+  background: 
+    linear-gradient(180deg, rgba(20, 60, 80, 0.3), rgba(10, 40, 60, 0.3)),
+    url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h100v100H0z' fill='%231a3a4a'/%3E%3Ccircle cx='20' cy='20' r='2' fill='%23fff' opacity='0.1'/%3E%3Ccircle cx='60' cy='50' r='2' fill='%23fff' opacity='0.1'/%3E%3Ccircle cx='80' cy='80' r='2' fill='%23fff' opacity='0.1'/%3E%3C/svg%3E");
+  background-size: 100% 100%, 100px 100px;
+}
+
+.fishing-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.fishing-text {
+  h3 {
+    font-size: 1.5rem;
+    color: #87ceeb;
+    margin:  2rem 0 1rem 0;
+    text-shadow: 2px 2px 0 #000;
+    
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  
+  p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(244, 232, 208, 0.9);
+    margin-bottom: 1.5rem;
+  }
+}
+
+.fishing-techniques {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.technique-card {
+  background: linear-gradient(135deg, rgba(30, 80, 100, 0.6), rgba(20, 60, 80, 0.6));
+  border: 3px solid rgba(135, 206, 235, 0.3);
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align:  center;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    border-color: #87ceeb;
+    box-shadow: 0 8px 20px rgba(135, 206, 235, 0.3);
+  }
+}
+
+.technique-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.technique-card h4 {
+  font-size: 1.2rem;
+  color: #87ceeb;
+  margin: 0 0 0.5rem 0;
+}
+
+.technique-card p {
+  font-size: 0.95rem;
+  color: rgba(244, 232, 208, 0.8);
+  margin: 0;
+}
+
+.ecological-actions {
+  list-style: none;
+  padding: 0;
+  margin:  1rem 0;
+  
+  li {
+    padding: 0.8rem 0;
+    font-size: 1.05rem;
+    color: rgba(244, 232, 208, 0.9);
+    border-bottom: 1px solid rgba(135, 206, 235, 0.2);
+    
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.fishing-gallery {
+  h3 {
+    font-size: 1.5rem;
+    color: #87ceeb;
+    margin: 0 0 1.5rem 0;
+    text-shadow: 2px 2px 0 #000;
+  }
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.photo-card {
+  background: rgba(0, 0, 0, 0.5);
+  border: 3px solid rgba(135, 206, 235, 0.3);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.05);
+    border-color: #87ceeb;
+    box-shadow: 0 8px 20px rgba(135, 206, 235, 0.4);
+  }
+  
+  img {
+    width: 100%;
+    height: 250px;
+    object-fit:  cover;
+    display: block;
+  }
+}
+
+.photo-caption {
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: rgba(244, 232, 208, 0.9);
+  text-align: center;
+  margin:  0;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+// ============================================
+// ZONE 3: GAMING
+// ============================================
+
+.gaming-section {
+  background: 
+    linear-gradient(180deg, rgba(40, 20, 60, 0.3), rgba(20, 10, 40, 0.3)),
+    repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      transparent 2px,
+      rgba(138, 43, 226, 0.05) 2px,
+      rgba(138, 43, 226, 0.05) 4px
+    );
+}
+
+.steam-stats {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  background: linear-gradient(135deg, rgba(23, 26, 33, 0.9), rgba(39, 50, 56, 0.9));
+  border: 4px solid #1b2838;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow:  0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.steam-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.steam-logo {
+  width: 100px;
+  height: auto;
+}
+
+.steam-info {
+  flex: 1;
+  
+  h3 {
+    font-size: 1.8rem;
+    color: #66c0f4;
+    margin: 0 0 1rem 0;
+    text-shadow: 2px 2px 0 #000;
+  }
+  
+  p {
+    font-size:  1.1rem;
+    color: rgba(244, 232, 208, 0.9);
+    margin: 0.5rem 0;
+  }
+}
+
+.games-grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.game-card {
+  background: linear-gradient(135deg, rgba(60, 40, 80, 0.8), rgba(40, 20, 60, 0.8));
+  border: 4px solid rgba(138, 43, 226, 0.3);
+  border-radius: 12px;
+  overflow: hidden;
+  transition:  all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  
+  &:hover {
+    transform: translateY(-10px);
+    border-color: #9b59b6;
+    box-shadow: 0 12px 30px rgba(138, 43, 226, 0.5);
+  }
+}
+
+.game-cover {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  border-bottom: 4px solid rgba(138, 43, 226, 0.3);
+}
+
+.game-info {
+  padding:  1.5rem;
+  
+  h3 {
+    font-size:  1.4rem;
+    color: #9b59b6;
+    margin: 0 0 0.5rem 0;
+    text-shadow: 2px 2px 0 #000;
+  }
+}
+
+.game-hours {
+  font-size: 0.95rem;
+  color: #87ceeb;
+  margin: 0.5rem 0 1rem 0;
+  font-weight: 600;
+}
+
+.game-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(244, 232, 208, 0.9);
+  margin: 1rem 0;
+}
+
+.game-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.tag {
+  background: rgba(138, 43, 226, 0.3);
+  border: 2px solid rgba(138, 43, 226, 0.5);
+  color: #9b59b6;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+// ============================================
+// ANIMATIONS
+// ============================================
+
+@keyframes neon-flicker {
+  0%, 100% {
+    text-shadow: 
+      4px 4px 0 #8b4513,
+      0 0 20px rgba(255, 215, 0, 0.5);
+  }
+  50% {
+    text-shadow:  
+      4px 4px 0 #8b4513,
+      0 0 30px rgba(255, 215, 0, 0.8);
+  }
+}
+
+@keyframes pulse-gold {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 1);
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform:  translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform:  translateY(0);
+  }
+}
+
+// ============================================
+// RESPONSIVE
+// ============================================
+
+// Section mentions spéciales
+.special-cars-section {
+  max-width: 1400px;
+  margin: 4rem auto 0;
+  padding: 3rem;
+  background: linear-gradient(135deg, rgba(139, 69, 19, 0.2), rgba(61, 43, 34, 0.2));
+  border: 4px solid rgba(255, 215, 0, 0.3);
+  border-radius: 12px;
+}
+
+.special-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.8rem;
+  color: #ffd700;
+  text-align: center;
+  text-shadow: 3px 3px 0 #8b4513;
+  margin-bottom: 2rem;
+}
+
+.special-cars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 2rem;
+}
+
+.special-car-card {
+  background: linear-gradient(135deg, rgba(80, 80, 80, 0.8), rgba(60, 60, 60, 0.8));
+  border: 3px solid #777;
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-8px);
+    border-color: #ffd700;
+    box-shadow: 0 12px 30px rgba(255, 215, 0, 0.3);
+  }
+  
+  &.highlight {
+    border: 4px solid #ffd700;
+    background: linear-gradient(135deg, rgba(120, 100, 20, 0.8), rgba(100, 80, 10, 0.8));
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+    
+    &:hover {
+      box-shadow: 0 16px 40px rgba(255, 215, 0, 0.6);
+    }
+    
+    h4 {
+      color: #ffd700;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.special-car-image {
+  width: 100%;
+  object-fit: contain;
+  border: 3px solid #555;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.special-car-info {
+  h4 {
+    font-size: 1.3rem;
+    color: #87ceeb;
+    margin: 0 0 0.5rem 0;
+  }
+}
+
+.special-year {
+  font-size: 0.95rem;
+  color: #ffd700;
+  margin: 0.3rem 0 1rem 0;
+  font-weight: 600;
+}
+
+.special-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(244, 232, 208, 0.9);
+  margin: 1rem 0;
+}
+
+.special-badge {
+  display: inline-block;
+  background: rgba(255, 215, 0, 0.2);
+  border: 2px solid rgba(255, 215, 0, 0.5);
+  color: #ffd700;
+  padding: 0.3rem 0.7rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin: 0.3rem 0.3rem 0 0;
+}
+
+// Mention spéciale Windows CE dans une carte
+.special-mention {
+  margin-top: 2.5rem;
+  padding: 2.5rem;
+  background: rgba(0, 100, 200, 0.2);
+  border: 3px solid rgba(135, 206, 235, 0.4);
+  border-radius: 8px;
+  
+  h4 {
+    font-size: 1.1rem;
+    color: #87ceeb;
+    margin: 0 0 0.8rem 0;
+    text-shadow: 2px 2px 0 #000;
+  }
+  
+  p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(244, 232, 208, 0.9);
+    margin: 0;
+    
+    strong {
+      color: #87ceeb;
+    }
+  }
+}
+
+// Timeline des générations de voitures
+.generations-timeline {
+  margin-top: 3rem;
+  padding: 2.5rem;
+  background: rgba(0, 0, 0, 0.3);
+  border: 3px solid rgba(255, 215, 0, 0.3);
+  border-radius: 8px;
+  
+  h4 {
+    font-size: 1.2rem;
+    color: #ffd700;
+    margin: 0 0 1.5rem 0;
+    text-shadow: 2px 2px 0 #000;
+  }
+}
+
+.timeline-items {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 120px 200px 1fr;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 4px solid #888;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-left-color: #ffd700;
+    transform: translateX(5px);
+  }
+  
+  &.highlight {
+    border-left-color: #ffd700;
+    background: rgba(255, 215, 0, 0.1);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+  }
+}
+
+.timeline-year {
+  font-size: 0.9rem;
+  color: #87ceeb;
+  font-weight: 700;
+  text-align: center;
+  padding: 0.5rem;
+  background: rgba(135, 206, 235, 0.2);
+  border-radius: 4px;
+}
+
+.timeline-name {
+  font-size: 1rem;
+  color: #ffd700;
+  font-weight: 600;
+}
+
+.timeline-item p {
+  font-size: 0.9rem;
+  color: rgba(244, 232, 208, 0.85);
+  margin: 0;
+  line-height: 1.5;
+}
+
+// Galerie triple pour Rolls-Royce
+.car-gallery-triple {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 500px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 3px solid #555;
+  transition: all 0.3s ease;
+  background: rgba(0, 0, 0, 0.3);
+  
+  &:hover {
+    transform: translateY(-5px);
+    border-color: #ffd700;
+    box-shadow: 0 12px 30px rgba(255, 215, 0, 0.4);
+    
+    .car-image-gallery {
+      transform: scale(1.03);
+    }
+  }
+  
+  &.highlight-gallery {
+    border-color: #ffd700;
+    border-width: 4px;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    
+    .gallery-label {
+      background: linear-gradient(135deg, #ffd700, #ffed4e);
+      color: #000;
+      font-weight: 700;
+    }
+  }
+}
+
+.car-image-gallery {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.90);
+  color: #ffd700;
+  padding: 0.75rem;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  backdrop-filter: blur(5px);
+  border-top: 2px solid rgba(255, 215, 0, 0.3);
+}
+
+// ============================================
+// LIGHTBOX
+// ============================================
+
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease;
+  cursor: pointer;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 95vw;
+  max-height: 95vh;
+  animation: zoomIn 0.3s ease;
+}
+
+.lightbox-image {
+  max-width: 100%;
+  max-height: 95vh;
+  object-fit: contain;
+  border: 4px solid #ffd700;
+  border-radius: 8px;
+  box-shadow: 0 0 50px rgba(255, 215, 0, 0.5);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -50px;
+  right: 0;
+  background: rgba(255, 215, 0, 0.9);
+  color: #000;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  &:hover {
+    background: #ffd700;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+// Responsive pour les nouvelles sections
+@media (max-width: 768px) {
+  .special-cars-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .timeline-item {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  
+  .timeline-year {
+    text-align: left;
+  }
+}
+
+@media (max-width: 1400px) {
+  .car-content {
+    gap: 2rem;
+  }
+  
+  .car-images-container {
+    width: 380px;
+  }
+  
+  .car-image {
+    width: 380px;
+    height: 260px;
+  }
+  
+  .car-gallery-triple {
+    max-width: 450px;
+  }
+  
+  .car-image-gallery {
+    height: 250px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .fishing-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .games-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+  .car-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .car-images-container {
+    width: 100%;
+  }
+  
+  .car-image {
+    width: 100%;
+    height: auto;
+    max-height: 350px;
+  }
+  
+  .car-gallery-triple {
+    max-width: 100%;
+  }
+  
+  .car-image-gallery {
+    height: 300px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .car-image-gallery {
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pixel-title {
+    font-size: 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 1.3rem;
+  }
+  
+  .car-card {
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+  }
+  
+  .car-content {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .car-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .car-rank {
+    min-width: auto;
+    width: 100%;
+  }
+  
+  .fishing-techniques {
+    grid-template-columns: 1fr;
+  }
+  
+  .photo-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .games-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .steam-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .car-image-gallery {
+    height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .car-image-gallery {
+    height: 180px;
+  }
+}
