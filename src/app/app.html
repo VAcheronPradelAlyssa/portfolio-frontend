@@ -1,2 +1,12 @@
 <app-header></app-header>
 <router-outlet></router-outlet>
+
+<!-- Scroll to Top Button -->
+<button 
+  class="scroll-to-top" 
+  *ngIf="showScrollButton()" 
+  (click)="scrollToTop()"
+  aria-label="Remonter au sommet de la page"
+  title="Remonter">
+  ⬆️
+</button>

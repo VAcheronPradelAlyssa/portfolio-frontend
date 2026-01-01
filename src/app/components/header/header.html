@@ -1,8 +1,16 @@
 <nav>
-  <ul>
-    <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Accueil</a></li>
-    <li><a routerLink="/cv" routerLinkActive="active">CV</a></li>
-    <li><a routerLink="/projets" routerLinkActive="active">Projets</a></li>
-    <li><a routerLink="/apropos" routerLinkActive="active">À Propos</a></li>
+  <!-- Burger menu button -->
+  <button class="burger-menu" (click)="toggleMenu()" [attr.aria-expanded]="isMenuOpen()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- Navigation menu -->
+  <ul [class.open]="isMenuOpen()">
+    <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeMenu()">Accueil</a></li>
+    <li><a routerLink="/cv" routerLinkActive="active" (click)="closeMenu()">CV</a></li>
+    <li><a routerLink="/projets" routerLinkActive="active" (click)="closeMenu()">Projets</a></li>
+    <li><a routerLink="/apropos" routerLinkActive="active" (click)="closeMenu()">À Propos</a></li>
   </ul>
 </nav>

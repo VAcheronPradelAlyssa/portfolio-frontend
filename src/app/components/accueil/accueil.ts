@@ -93,4 +93,13 @@ export class AccueilComponent implements OnInit, OnDestroy, AfterViewInit {
       clearTimeout(this.typingIntervalId);
     }
   }
+
+  downloadCV(): void {
+    const link = document.createElement('a');
+    link.href = '/assets/CV_ALYSSA_VACHERON.pdf';
+    link.download = 'CV_ALYSSA_VACHERON.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
 }
