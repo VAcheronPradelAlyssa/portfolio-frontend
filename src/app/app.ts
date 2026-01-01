@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { Header } from './components/header/header';
 import { Meta } from '@angular/platform-browser';
 import { isPlatformBrowser, CommonModule } from '@angular/common';
+import { inject as injectAnalytics } from '@vercel/analytics';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,11 @@ export class App implements OnInit {
   showScrollButton = signal(false);
 
   ngOnInit(): void {
+    // Initialiser Vercel Analytics (uniquement côté navigateur)
+    if (isPlatformBrowser(this.platformId)) {
+      injectAnalytics();
+    }
+
     // Ajouter le JSON-LD pour le schema.org (uniquement côté navigateur)
     if (isPlatformBrowser(this.platformId)) {
       const schemaJson = {
