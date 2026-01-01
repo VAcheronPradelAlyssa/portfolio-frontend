@@ -1,9 +1,8 @@
 import { Component, OnInit, PLATFORM_ID, inject, signal } from '@angular/core';
-import { isPlatformBrowser, NgIf } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-apropos',
-  imports: [NgIf],
   templateUrl: './apropos.html',
   styleUrl: './apropos.scss'
 })
