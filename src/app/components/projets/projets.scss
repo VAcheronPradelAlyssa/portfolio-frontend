@@ -120,6 +120,35 @@
   line-height: 1.5;
 }
 
+// Notice "Bientôt disponible"
+.coming-soon-notice {
+  margin: 1.5rem auto;
+  text-align: center;
+  
+  p {
+    color: #d2691e;
+    font-size: 1rem;
+    font-style: italic;
+    padding: 0.8rem 1.5rem;
+    background: rgba(210, 105, 30, 0.1);
+    border: 2px dashed #d2691e;
+    border-radius: 8px;
+    display: inline-block;
+    animation: pulse-notice 2s ease-in-out infinite;
+  }
+}
+
+@keyframes pulse-notice {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.02);
+  }
+}
+
 .cat-emojis {
   display:flex;
   justify-content:center;
@@ -291,6 +320,7 @@
   height:100%;
   object-fit:cover;
   transition:transform 0.4s ease;
+  cursor:pointer;
 }
 
 // Empreintes de pattes
@@ -317,6 +347,19 @@
 // Infos du projet
 .project-info-cat {
   padding:0.5rem 0;
+}
+
+// Titre officiel du projet
+.project-official-title {
+  font-size: 0.85rem;
+  color: rgba(139, 69, 19, 0.8);
+  font-style: italic;
+  margin: 0 0 0.8rem 0;
+  padding: 0.5rem;
+  background: rgba(255, 215, 0, 0.1);
+  border-left: 3px solid rgba(139, 69, 19, 0.4);
+  border-radius: 4px;
+  line-height: 1.4;
 }
 
 .project-title-cat {
@@ -613,6 +656,10 @@
   
   .project-skills-cat {
     font-size: 0.85rem;
+  }
+  
+  .project-official-title {
+    font-size: 0.8rem;
   }
   
   .cats-photo-frame {
