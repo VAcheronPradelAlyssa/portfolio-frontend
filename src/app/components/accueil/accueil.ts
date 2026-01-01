@@ -1,5 +1,4 @@
 import { Component, OnInit, OnDestroy, signal, inject, AfterViewInit, computed } from '@angular/core';
-import { UserService } from '../../services/user';
 
 @Component({
   selector: 'app-accueil',
@@ -8,11 +7,9 @@ import { UserService } from '../../services/user';
   styleUrl: './accueil.scss'
 })
 export class AccueilComponent implements OnInit, OnDestroy, AfterViewInit {
-  private userService = inject(UserService);
-
   user = signal<any>(null);
   error = signal<string | null>(null);
-  loading = signal(true);
+  loading = signal(false);
   
   rotatingPhrases: string[] = [
     'Passionnée de voitures anciennes 🚘',
@@ -29,18 +26,6 @@ export class AccueilComponent implements OnInit, OnDestroy, AfterViewInit {
   private typingIntervalId: ReturnType<typeof setInterval> | null = null;
 
   ngOnInit(): void {
-    this.userService.getUser().subscribe({
-      next: (data) => {
-        this.user.set(data);
-        this.loading.set(false);
-      },
-      error: (err) => {
-        console.error('Erreur lors du chargement utilisateur:', err);
-        this.error.set('Le backend n\'est pas encore configuré');
-        this.loading.set(false);
-      }
-    });
-
     if (typeof window !== 'undefined') {
       this.startTypingEffect();
     }
