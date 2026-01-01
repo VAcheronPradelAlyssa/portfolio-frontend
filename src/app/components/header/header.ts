@@ -11,7 +11,8 @@ import { ThemeService } from '../../services/theme.service';
   host: {
     '[class.accueil-theme]': 'isAccueilPage()',
     '[class.cv-theme]': 'isCvPage()',
-    '[class.apropos-theme]': 'isAproposPage()'
+    '[class.apropos-theme]': 'isAproposPage()',
+    '[class.projets-theme]': 'isProjetsPage()'
   }
 })
 export class Header {
@@ -21,6 +22,7 @@ export class Header {
   isAccueilPage = signal(false);
   isCvPage = signal(false);
   isAproposPage = signal(false);
+  isProjetsPage = signal(false);
 
   constructor() {
     this.checkRoute(this.router.url);
@@ -36,5 +38,6 @@ export class Header {
     this.isAccueilPage.set(url === '/' || url === '');
     this.isCvPage.set(url.includes('/cv'));
     this.isAproposPage.set(url.includes('/apropos'));
+    this.isProjetsPage.set(url.includes('/projets'));
   }
 }

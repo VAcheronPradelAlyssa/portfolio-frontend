@@ -1,24 +1,579 @@
-<section class="projets">
-  <h1>Mes Projets</h1>
-  
-  @if (loading()) {
-    <p>Chargement des projets...</p>
-  } @else if (error()) {
-    <div class="error">
-      <p>{{ error() }}</p>
-      <p><em>Le frontend fonctionne ! Il faut maintenant créer l'API backend.</em></p>
+<div class="projets-chats">
+  <!-- Header -->
+  <div class="cats-header">
+    <h1 class="pixel-title">🐱 MES PROJETS RONRONNANTS 💻</h1>
+    <p class="cats-subtitle">
+      Chaque projet a été créé avec amour...   et quelques poils de chat sur le clavier 😺
+    </p>
+    
+    <!-- Photo des chats -->
+    <div class="cats-photo-section">
+      <div class="cats-photo-frame">
+        <img src="/assets/noupie-pitau.jpg" alt="Noupie et Pitau, mes deux chats" class="cats-photo">
+        <p class="cats-photo-caption">Noupie et Pitau 🐱💕 - Mes assistants développeurs (très) superviseurs</p>
+      </div>
     </div>
-  } @else if (projects().length === 0) {
-    <p>Aucun projet disponible pour le moment.</p>
-  } @else {
-    <ul>
-      @for (project of projects(); track project.id) {
-        <li>
-          <strong>{{ project.title }}</strong> : {{ project.description }}
-          <br />
-          <a [href]="project.githubLink" target="_blank">GitHub</a>
-        </li>
-      }
-    </ul>
-  }
-</section>
+    
+    <div class="formation-badge">
+      <p>🎓 <strong>Formation Développeur Full-Stack Java/Angular</strong> - OpenClassrooms (RNCP Niveau 7 - Bac+5)</p>
+      <p>Mars - Septembre 2025 ✅</p>
+    </div>
+    <div class="cat-emojis">
+      <span class="floating-cat">🐱</span>
+      <span class="floating-cat">😺</span>
+      <span class="floating-cat">😸</span>
+    </div>
+  </div>
+
+  <!-- Grille de projets -->
+  <div class="projects-grid-cats">
+
+    <!-- Projet 1: TéléSport (Angular - JO) -->
+    <div class="project-card-cat validated" (click)="navigateToProject('telesport')">
+      <div class="validation-badge">✅ VALIDÉ</div>
+      <div class="cat-ears">
+        <div class="ear-left"></div>
+        <div class="ear-right"></div>
+      </div>
+      
+      
+      <div class="project-screen-cat">
+        <img src="/assets/projects/telesport.jpg" alt="TéléSport JO" class="project-image-cat">
+        <div class="paw-prints">
+          <span class="paw">🐾</span>
+          <span class="paw">🐾</span>
+          <span class="paw">🐾</span>
+        </div>
+      </div>
+      
+      <div class="project-info-cat">
+        <h3 class="project-title-cat">
+          <span class="cat-icon">🏅</span> TéléSport - Dashboard JO
+        </h3>
+        <p class="project-date-cat">📅 Projet 1 • 40 heures</p>
+        <p class="project-description-cat">
+          Dashboard interactif pour visualiser les statistiques des Jeux Olympiques 
+          (médailles par pays, etc.). Application responsive développée avec Angular 
+          en suivant les bonnes pratiques (services HTTP, RxJS, Observables).
+        </p>
+        <div class="project-tech-cat">
+          <span class="tech-badge-cat">Angular</span>
+          <span class="tech-badge-cat">TypeScript</span>
+          <span class="tech-badge-cat">RxJS</span>
+          <span class="tech-badge-cat">Observables</span>
+          <span class="tech-badge-cat">Git/GitHub</span>
+        </div>
+        <div class="project-skills-cat">
+          <p><strong>🎯 Compétences :  </strong></p>
+          <ul>
+            <li>✓ Développer le front-end avec Angular maintenable</li>
+            <li>✓ Gérer le versionnage avec Git et GitHub</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="fur-texture"></div>
+    </div>
+
+    <!-- Projet 2: ChâTop (Spring Boot - Location immobilière) -->
+    <div class="project-card-cat validated" (click)="navigateToProject('chatop')">
+      <div class="validation-badge">✅ VALIDÉ</div>
+      <div class="cat-ears">
+        <div class="ear-left"></div>
+        <div class="ear-right"></div>
+      </div>
+      
+      <div class="project-screen-cat">
+        <img src="/assets/projects/chatop.jpg" alt="ChâTop" class="project-image-cat">
+        <div class="paw-prints">
+          <span class="paw">🐾</span>
+          <span class="paw">🐾</span>
+          <span class="paw">🐾</span>
+        </div>
+      </div>
+      
+      <div class="project-info-cat">
+        <h3 class="project-title-cat">
+          <span class="cat-icon">🏠</span> ChâTop - API Location
+        </h3>
+        <p class="project-date-cat">📅 Projet 2 • 40 heures</p>
+        <p class="project-description-cat">
+          API REST pour portail de location immobilière saisonnière.  Système 
+          d'authentification sécurisé avec Spring Security, gestion de base de données 
+          avec Spring Data, et documentation Swagger complète.
+        </p>
+        <div class="project-tech-cat">
+          <span class="tech-badge-cat">Java</span>
+          <span class="tech-badge-cat">Spring Boot</span>
+          <span class="tech-badge-cat">Spring Security</span>
+          <span class="tech-badge-cat">Spring Data</span>
+          <span class="tech-badge-cat">Swagger</span>
+          <span class="tech-badge-cat">JWT</span>
+        </div>
+        <div class="project-skills-cat">
+          <p><strong>🎯 Compétences : </strong></p>
+          <ul>
+            <li>✓ Développer le back-end avec Java maintenable</li>
+            <li>✓ Implémenter une API REST sécurisée</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="fur-texture"></div>
+    </div>
+
+    <!-- Projet 3: Gen-Z Web (Veille techno + Architecture) -->
+    <div class="project-card-cat validated" (click)="navigateToProject('genzweb')">
+      <div class="validation-badge">✅ VALIDÉ</div>
+      <div class="cat-ears">
+        <div class="ear-left"></div>
+        <div class="ear-right"></div>
+      </div>
+      
+      <div class="project-screen-cat">
+        <img src="/assets/projects/genzweb.jpg" alt="Gen-Z Web" class="project-image-cat">
+        <div class="paw-prints">
+          <span class="paw">🐾</span>
+          <span class="paw">🐾</span>
+          <span class="paw">🐾</span>
+        </div>
+      </div>
+      
+      <div class="project-info-cat">
+        <h3 class="project-title-cat">
+          <span class="cat-icon">🔍</span> Gen-Z Web - Architecture
+        </h3>
+        <p class="project-date-cat">📅 Projet 3 • 20 heures</p>
+        <p class="project-description-cat">
+          Veille technologique sur Angular et Java, puis définition de l'architecture 
+          d'un site e-commerce (Knesh). Choix des technologies, librairies de test, 
+          composants visuels et paradigmes de programmation justifiés.
+        </p>
+        <div class="project-tech-cat">
+          <span class="tech-badge-cat">Veille techno</span>
+          <span class="tech-badge-cat">Architecture</span>
+          <span class="tech-badge-cat">Angular</span>
+          <span class="tech-badge-cat">Java</span>
+          <span class="tech-badge-cat">Documentation</span>
+        </div>
+        <div class="project-skills-cat">
+          <p><strong>🎯 Compétences : </strong></p>
+          <ul>
+            <li>✓ Réaliser une veille technologique</li>
+            <li>✓ Choisir les outils adaptés au projet</li>
+            <li>✓ Définir un paradigme de programmation</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="fur-texture"></div>
+    </div>
+
+    <!-- Projet 4: Savasana Yoga (Testing full-stack) -->
+    <div class="project-card-cat validated" (click)="navigateToProject('savasana')">
+      <div class="validation-badge">✅ VALIDÉ</div>
+      <div class="cat-ears">
+        <div class="ear-left"></div>
+        <div class="ear-right"></div>
+      </div>
+      
+      <div class="project-screen-cat">
+        <img src="/assets/projects/savasana.jpg" alt="Savasana Yoga" class="project-image-cat">
+        <div class="paw-prints">
+          <span class="paw">🐾</span>
+          <span class="paw">🐾</span>
+          <span class="paw">🐾</span>
+        </div>
+      </div>
+      
+      <div class="project-info-cat">
+        <h3 class="project-title-cat">
+          <span class="cat-icon">🧘</span> Savasana Yoga - Testing
+        </h3>
+        <p class="project-date-cat">📅 Projet 4 • 30 heures</p>
+        <p class="project-description-cat">
+          Tests automatisés complets d'une application de réservation de cours de yoga.  
+          Tests unitaires, d'intégration et end-to-end avec couverture de code > 80% 
+          (dont 30% de tests d'intégration).
+        </p>
+        <div class="project-tech-cat">
+          <span class="tech-badge-cat">JUnit</span>
+          <span class="tech-badge-cat">Mockito</span>
+          <span class="tech-badge-cat">Jest</span>
+          <span class="tech-badge-cat">Cypress</span>
+          <span class="tech-badge-cat">TDD</span>
+        </div>
+        <div class="project-skills-cat">
+          <p><strong>🎯 Compétences : </strong></p>
+          <ul>
+            <li>✓ Rédiger des tests front-end automatisés</li>
+            <li>✓ Rédiger des tests back-end automatisés</li>
+            <li>✓ Atteindre 80% de couverture de code</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="fur-texture"></div>
+    </div>
+
+    <!-- Projet 5: MDD - Monde de Dév (Full-Stack complet) -->
+    <div class="project-card-cat validated featured" (click)="navigateToProject('mdd')">
+      <div class="validation-badge">✅ VALIDÉ</div>
+      <div class="cat-ears">
+        <div class="ear-left"></div>
+        <div class="ear-right"></div>
+      </div>
+      
+      <div class="project-screen-cat">
+        <img src="/assets/projects/mdd.jpg" alt="MDD - Monde de Dév" class="project-image-cat">
+        <div class="paw-prints">
+          <span class="paw">🐾</span>
+          <span class="paw">🐾</span>
+          <span class="paw">🐾</span>
+        </div>
+      </div>
+      
+      <div class="project-info-cat">
+        <h3 class="project-title-cat">
+          <span class="cat-icon">🌐</span> MDD - Monde de Dév
+        </h3>
+        <p class="project-date-cat">📅 Projet 5 • 70 heures 🏆</p>
+        <p class="project-description-cat">
+          Réseau social complet pour développeurs (MVP). Les utilisateurs s'abonnent 
+          à des sujets (JavaScript, Java, Python.. .), consultent un fil d'actualité, 
+          publient des articles et commentent.  Projet full-stack de A à Z.
+        </p>
+        <div class="project-tech-cat">
+          <span class="tech-badge-cat">Angular</span>
+          <span class="tech-badge-cat">TypeScript</span>
+          <span class="tech-badge-cat">Java</span>
+          <span class="tech-badge-cat">Spring Boot</span>
+          <span class="tech-badge-cat">MySQL</span>
+          <span class="tech-badge-cat">JWT</span>
+          <span class="tech-badge-cat">API REST</span>
+        </div>
+        <div class="project-skills-cat">
+          <p><strong>🎯 Compétences : </strong></p>
+          <ul>
+            <li>✓ Intégrer front-end et back-end via API</li>
+            <li>✓ Valider la documentation des outils choisis</li>
+            <li>✓ Développer une application complète</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="fur-texture"></div>
+    </div>
+
+    <!-- Projet 6: LiVrai (Cahier des charges) -->
+    <div class="project-card-cat validated" (click)="navigateToProject('livrai')">
+      <div class="validation-badge">✅ VALIDÉ</div>
+      <div class="cat-ears">
+        <div class="ear-left"></div>
+        <div class="ear-right"></div>
+      </div>
+      
+      <div class="project-screen-cat">
+        <img src="/assets/projects/livrai.jpg" alt="LiVrai" class="project-image-cat">
+        <div class="paw-prints">
+          <span class="paw">🐾</span>
+          <span class="paw">🐾</span>
+          <span class="paw">🐾</span>
+        </div>
+      </div>
+      
+      <div class="project-info-cat">
+        <h3 class="project-title-cat">
+          <span class="cat-icon">📦</span> LiVrai - Cahier des Charges
+        </h3>
+        <p class="project-date-cat">📅 Projet 6 • 30 heures</p>
+        <p class="project-description-cat">
+          Refonte d'une application CRM de gestion de livraison.   Audit complet de 
+          l'application existante (fonctionnalités, architecture) puis rédaction d'un 
+          cahier des charges fonctionnel et technique détaillé avec UML. 
+        </p>
+        <div class="project-tech-cat">
+          <span class="tech-badge-cat">Cahier des charges</span>
+          <span class="tech-badge-cat">UML</span>
+          <span class="tech-badge-cat">Audit</span>
+          <span class="tech-badge-cat">Spécifications</span>
+        </div>
+        <div class="project-skills-cat">
+          <p><strong>🎯 Compétences :  </strong></p>
+          <ul>
+            <li>✓ Justifier la conception d'une application</li>
+            <li>✓ Identifier les besoins client</li>
+            <li>✓ Réaliser un audit fonctionnel et technique</li>
+            <li>✓ Rédiger les spécifications techniques</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="fur-texture"></div>
+    </div>
+
+    <!-- Projet 7: DeliveryFit (Proposition commerciale) -->
+    <div class="project-card-cat validated" (click)="navigateToProject('deliveryfit')">
+      <div class="validation-badge">✅ VALIDÉ</div>
+      <div class="cat-ears">
+        <div class="ear-left"></div>
+        <div class="ear-right"></div>
+      </div>
+      
+      <div class="project-screen-cat">
+        <img src="/assets/projects/deliveryfit.jpg" alt="DeliveryFit" class="project-image-cat">
+        <div class="paw-prints">
+          <span class="paw">🐾</span>
+          <span class="paw">🐾</span>
+          <span class="paw">🐾</span>
+        </div>
+      </div>
+      
+      <div class="project-info-cat">
+        <h3 class="project-title-cat">
+          <span class="cat-icon">📊</span> DeliveryFit - Chiffrage
+        </h3>
+        <p class="project-date-cat">📅 Projet 7 • 20 heures</p>
+        <p class="project-description-cat">
+          Application d'optimisation de gestion des expéditions pour Alisa's Closet.  
+          Proposition commerciale complète :    estimation de charge, chiffrage, budget, 
+          risques, objectifs de performance et planning (Agile/Jira).
+        </p>
+        <div class="project-tech-cat">
+          <span class="tech-badge-cat">Chiffrage</span>
+          <span class="tech-badge-cat">Budget</span>
+          <span class="tech-badge-cat">Gestion risques</span>
+          <span class="tech-badge-cat">Agile</span>
+          <span class="tech-badge-cat">Jira</span>
+        </div>
+        <div class="project-skills-cat">
+          <p><strong>🎯 Compétences : </strong></p>
+          <ul>
+            <li>✓ Anticiper les risques d'un projet</li>
+            <li>✓ Définir un budget et confirmer la rentabilité</li>
+            <li>✓ Estimer la charge de travail</li>
+            <li>✓ Confirmer la solution avec le client</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="fur-texture"></div>
+    </div>
+
+    <!-- Projet 8: BobApp (CI/CD) -->
+    <div class="project-card-cat validated" (click)="navigateToProject('bobapp')">
+      <div class="validation-badge">✅ VALIDÉ</div>
+      <div class="cat-ears">
+        <div class="ear-left"></div>
+        <div class="ear-right"></div>
+      </div>
+      
+      <div class="project-screen-cat">
+        <img src="/assets/projects/bobapp.jpg" alt="BobApp" class="project-image-cat">
+        <div class="paw-prints">
+          <span class="paw">🐾</span>
+          <span class="paw">🐾</span>
+          <span class="paw">🐾</span>
+        </div>
+      </div>
+      
+      <div class="project-info-cat">
+        <h3 class="project-title-cat">
+          <span class="cat-icon">🔄</span> BobApp - CI/CD
+        </h3>
+        <p class="project-date-cat">📅 Projet 8 • 45 heures</p>
+        <p class="project-description-cat">
+          Mise en place d'un workflow CI/CD complet sur GitHub Actions pour une 
+          application open-source. Automatisation :  tests, qualité du code (SonarCloud), 
+          build, couverture de code et déploiement Docker Hub.
+        </p>
+        <div class="project-tech-cat">
+          <span class="tech-badge-cat">GitHub Actions</span>
+          <span class="tech-badge-cat">Docker</span>
+          <span class="tech-badge-cat">SonarCloud</span>
+          <span class="tech-badge-cat">CI/CD</span>
+          <span class="tech-badge-cat">Quality Gates</span>
+        </div>
+        <div class="project-skills-cat">
+          <p><strong>🎯 Compétences : </strong></p>
+          <ul>
+            <li>✓ Automatiser compilation et tests</li>
+            <li>✓ Gérer l'intégration et livraison continues</li>
+            <li>✓ Garantir la qualité du code</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="fur-texture"></div>
+    </div>
+
+    <!-- Projet 9: CATASTERRE (Management d'équipe) -->
+    <div class="project-card-cat validated" (click)="navigateToProject('catasterre')">
+      <div class="validation-badge">✅ VALIDÉ</div>
+      <div class="cat-ears">
+        <div class="ear-left"></div>
+        <div class="ear-right"></div>
+      </div>
+      
+      <div class="project-screen-cat">
+        <img src="/assets/projects/catasterre.jpg" alt="CATASTERRE" class="project-image-cat">
+        <div class="paw-prints">
+          <span class="paw">🐾</span>
+          <span class="paw">🐾</span>
+          <span class="paw">🐾</span>
+        </div>
+      </div>
+      
+      <div class="project-info-cat">
+        <h3 class="project-title-cat">
+          <span class="cat-icon">👥</span> CATASTERRE - Management
+        </h3>
+        <p class="project-date-cat">📅 Projet 9 • 30 heures</p>
+        <p class="project-description-cat">
+          Lead développeur sur application de visualisation de catastrophes naturelles 
+          par satellite. Gestion d'équipe Scrum, Sprint Backlog, plan de formation, 
+          conformité RGPD/ITIL, et recrutement QA Engineer.
+        </p>
+        <div class="project-tech-cat">
+          <span class="tech-badge-cat">Scrum</span>
+          <span class="tech-badge-cat">Management</span>
+          <span class="tech-badge-cat">RGPD</span>
+          <span class="tech-badge-cat">ITIL</span>
+          <span class="tech-badge-cat">Formation</span>
+        </div>
+        <div class="project-skills-cat">
+          <p><strong>🎯 Compétences : </strong></p>
+          <ul>
+            <li>✓ Définir la répartition des tâches</li>
+            <li>✓ Superviser l'exécution d'un projet</li>
+            <li>✓ Planifier avec méthodologie agile</li>
+            <li>✓ Adresser les besoins en compétences</li>
+            <li>✓ Assurer le respect des normes</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="fur-texture"></div>
+    </div>
+
+    <!-- Projet 10: MaisonEnPlace (Tests, Sécurité, Backups) -->
+    <div class="project-card-cat validated" (click)="navigateToProject('maisonenplace')">
+      <div class="validation-badge">✅ VALIDÉ</div>
+      <div class="cat-ears">
+        <div class="ear-left"></div>
+        <div class="ear-right"></div>
+      </div>
+      
+      <div class="project-screen-cat">
+        <img src="/assets/projects/maisonenplace.jpg" alt="MaisonEnPlace" class="project-image-cat">
+        <div class="paw-prints">
+          <span class="paw">🐾</span>
+          <span class="paw">🐾</span>
+          <span class="paw">🐾</span>
+        </div>
+      </div>
+      
+      <div class="project-info-cat">
+        <h3 class="project-title-cat">
+          <span class="cat-icon">🛡️</span> MaisonEnPlace - Qualité & Sécurité
+        </h3>
+        <p class="project-date-cat">📅 Projet 10 • 50 heures</p>
+        <p class="project-description-cat">
+          Senior Quality Developer pour app de réalité augmentée (mobilier/déco).  
+          Plans complets :    tests (TDD/BDD avec Gherkin), sécurité (identification 
+          risques + solutions) et sauvegarde de données (stratégie + restauration).
+        </p>
+        <div class="project-tech-cat">
+          <span class="tech-badge-cat">TDD/BDD</span>
+          <span class="tech-badge-cat">Gherkin</span>
+          <span class="tech-badge-cat">Sécurité</span>
+          <span class="tech-badge-cat">Sauvegarde</span>
+          <span class="tech-badge-cat">Qualité</span>
+        </div>
+        <div class="project-skills-cat">
+          <p><strong>🎯 Compétences : </strong></p>
+          <ul>
+            <li>✓ Créer un plan de sauvegarde de données</li>
+            <li>✓ Élaborer un plan de test (TDD/BDD)</li>
+            <li>✓ Garantir qualité et sécurité</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="fur-texture"></div>
+    </div>
+
+    <!-- Projet 11: Your Car Your Way (Architecture finale) -->
+    <div class="project-card-cat validated featured" (click)="navigateToProject('ycyw')">
+      <div class="validation-badge">✅ VALIDÉ</div>
+      <div class="cat-ears">
+        <div class="ear-left"></div>
+        <div class="ear-right"></div>
+      </div>
+      
+      <div class="project-screen-cat">
+        <img src="/assets/projects/ycyw.jpg" alt="Your Car Your Way" class="project-image-cat">
+        <div class="paw-prints">
+          <span class="paw">🐾</span>
+          <span class="paw">🐾</span>
+          <span class="paw">🐾</span>
+        </div>
+      </div>
+      
+      <div class="project-info-cat">
+        <h3 class="project-title-cat">
+          <span class="cat-icon">🏗️</span> Your Car Your Way - Architecture
+        </h3>
+        <p class="project-date-cat">📅 Projet 11 • 35 heures 🏆</p>
+        <p class="project-description-cat">
+          Projet final !  Conception complète de l'architecture d'une application 
+          internationale de location de voitures.   Business Requirements, Architecture 
+          Definition Document, Compliance Assessment, et PoC (chat service client).
+        </p>
+        <div class="project-tech-cat">
+          <span class="tech-badge-cat">Architecture</span>
+          <span class="tech-badge-cat">PostgreSQL</span>
+          <span class="tech-badge-cat">NoSQL</span>
+          <span class="tech-badge-cat">UML</span>
+          <span class="tech-badge-cat">PoC</span>
+          <span class="tech-badge-cat">MongoDB</span>
+        </div>
+        <div class="project-skills-cat">
+          <p><strong>🎯 Compétences : </strong></p>
+          <ul>
+            <li>✓ Concevoir l'architecture logicielle</li>
+            <li>✓ Structurer une base de données</li>
+            <li>✓ Valider la solution avec les parties prenantes</li>
+            <li>✓ Développer une preuve de concept (PoC)</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="fur-texture"></div>
+    </div>
+  </div>
+
+  <!-- Section récapitulative -->
+  <div class="projects-summary">
+    <h3 class="summary-title">🏆 Parcours complet validé !   </h3>
+    <div class="summary-stats">
+      <div class="stat-item">
+        <span class="stat-number">11</span>
+        <span class="stat-label">Projets validés</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">410h</span>
+        <span class="stat-label">Heures de projets</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">100%</span>
+        <span class="stat-label">Taux de réussite</span>
+      </div>
+    </div>
+    <p class="summary-description">
+      Formation <strong>Développeur Full-Stack Java/Angular</strong> (RNCP Niveau 7 - Bac+5)<br>
+      OpenClassrooms • Mars - Septembre 2025 ✅
+    </p>
+  </div>
+
+</div>

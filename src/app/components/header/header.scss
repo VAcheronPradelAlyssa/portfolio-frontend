@@ -144,3 +144,104 @@ nav {
     }
   }
 }
+
+// Style spécifique pour la page Projets (Thème Chat/Cat)
+:host(.projets-theme) nav {
+  background: 
+    linear-gradient(135deg, rgba(222, 184, 135, 0.95), rgba(210, 180, 140, 0.95)),
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(139, 69, 19, 0.1) 10px,
+      rgba(139, 69, 19, 0.1) 20px
+    );
+  border-bottom: 5px solid #8b4513;
+  box-shadow: 
+    0 4px 15px rgba(139, 69, 19, 0.3),
+    inset 0 2px 0 rgba(255, 255, 255, 0.3);
+  position: relative;
+  
+  // Oreilles de chat décoratives
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: -15px;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid #8b4513;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  }
+  
+  &::before {
+    left: 10%;
+    transform: rotate(-15deg);
+  }
+  
+  &::after {
+    right: 10%;
+    transform: rotate(15deg);
+  }
+
+  ul li a {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.85rem;
+    color: #8b4513;
+    text-shadow: 
+      1px 1px 0 rgba(255, 255, 255, 0.5),
+      2px 2px 0 rgba(139, 69, 19, 0.3);
+    letter-spacing: 1px;
+    padding: 0.6rem 1.2rem;
+    border: 3px solid #8b4513;
+    border-radius: 12px;
+    display: inline-block;
+    transition: all 0.3s ease;
+    background: rgba(255, 248, 220, 0.6);
+    position: relative;
+    
+    // Empreinte de patte au survol
+    &::before {
+      content: '🐾';
+      position: absolute;
+      top: 50%;
+      left: -25px;
+      transform: translateY(-50%);
+      font-size: 1rem;
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+
+    &:hover {
+      color: #654321;
+      border-color: #d2691e;
+      background: rgba(255, 248, 220, 0.9);
+      box-shadow: 
+        0 4px 12px rgba(139, 69, 19, 0.4),
+        inset 0 2px 8px rgba(255, 255, 255, 0.5);
+      transform: translateY(-3px);
+      
+      &::before {
+        opacity: 1;
+        left: -30px;
+      }
+    }
+
+    &.active {
+      color: #654321;
+      border-color: #d2691e;
+      background: linear-gradient(135deg, rgba(255, 248, 220, 1), rgba(255, 239, 213, 1));
+      box-shadow: 
+        0 4px 12px rgba(139, 69, 19, 0.5),
+        inset 0 2px 10px rgba(210, 105, 30, 0.3);
+      font-weight: 900;
+      
+      &::after {
+        content: '😺';
+        margin-left: 0.5rem;
+      }
+    }
+  }
+}
