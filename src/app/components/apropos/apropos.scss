@@ -326,6 +326,19 @@
     color: rgba(244, 232, 208, 0.9);
     margin-bottom: 1.5rem;
   }
+  
+  a {
+    color: #87ceeb;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      color: #ffed4e;
+      border-bottom-color: #ffd700;
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    }
+  }
 }
 
 .fishing-techniques {
