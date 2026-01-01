@@ -46,7 +46,25 @@ export class AccueilComponent implements OnInit, OnDestroy, AfterViewInit {
     }
   }
 
+  ngAfterViewInit(): void {
+    // Redémarrer l'effet de typing quand le composant devient visible
+    if (this.displayedText() === '') {
+      this.startTypingEffect();
+    }
+  }
+
   private startTypingEffect(): void {
+    // Arrêter l'intervalle précédent
+    if (this.typingIntervalId) {
+      clearTimeout(this.typingIntervalId);
+    }
+
+    // Réinitialiser les états
+    this.currentPhraseIndex.set(0);
+    this.charIndex.set(0);
+    this.isDeleting.set(false);
+    this.displayedText.set('');
+
     const typeCharacter = () => {
       const currentText = this.currentPhrase();
       const isDeleting = this.isDeleting();
@@ -85,17 +103,9 @@ export class AccueilComponent implements OnInit, OnDestroy, AfterViewInit {
     typeCharacter();
   }
 
-  ngAfterViewInit(): void {
-    // Rien à faire - les sections s'affichent directement
-  }
-
-  private setupIntersectionObserver(): void {
-    // Fonction désactivée - pas d'animations au scroll
-  }
-
   ngOnDestroy(): void {
     if (this.typingIntervalId) {
-      clearInterval(this.typingIntervalId);
+      clearTimeout(this.typingIntervalId);
     }
   }
 }

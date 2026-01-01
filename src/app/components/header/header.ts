@@ -10,7 +10,8 @@ import { ThemeService } from '../../services/theme.service';
   styleUrl: './header.scss',
   host: {
     '[class.accueil-theme]': 'isAccueilPage()',
-    '[class.cv-theme]': 'isCvPage()'
+    '[class.cv-theme]': 'isCvPage()',
+    '[class.apropos-theme]': 'isAproposPage()'
   }
 })
 export class Header {
@@ -19,6 +20,7 @@ export class Header {
   
   isAccueilPage = signal(false);
   isCvPage = signal(false);
+  isAproposPage = signal(false);
 
   constructor() {
     this.checkRoute(this.router.url);
@@ -33,5 +35,6 @@ export class Header {
   private checkRoute(url: string): void {
     this.isAccueilPage.set(url === '/' || url === '');
     this.isCvPage.set(url.includes('/cv'));
+    this.isAproposPage.set(url.includes('/apropos'));
   }
 }

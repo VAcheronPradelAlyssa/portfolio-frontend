@@ -72,3 +72,75 @@ nav {
     }
   }
 }
+
+// Style spécifique pour la page À Propos (Thème Gaming/Arcade)
+:host(.apropos-theme) nav {
+  background: 
+    linear-gradient(135deg, rgba(20, 10, 40, 0.8), rgba(40, 20, 60, 0.8)),
+    repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      transparent 2px,
+      rgba(138, 43, 226, 0.1) 2px,
+      rgba(138, 43, 226, 0.1) 4px
+    );
+  border-bottom: 4px solid #9b59b6;
+  box-shadow: 
+    0 4px 15px rgba(138, 43, 226, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+  ul li a {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+    color: #00ff88;
+    text-shadow: 
+      0 0 8px rgba(0, 255, 136, 0.6),
+      2px 2px 0 #000;
+    letter-spacing: 2px;
+    padding: 0.7rem 1.4rem;
+    border: 2px solid #00ff88;
+    border-radius: 2px;
+    display: inline-block;
+    transition: all 0.2s ease;
+    background: rgba(0, 255, 136, 0.05);
+    position: relative;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border: 2px solid #9b59b6;
+      border-radius: 2px;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    &:hover {
+      color: #00ff88;
+      border-color: #00ff88;
+      box-shadow: 
+        0 0 12px rgba(0, 255, 136, 0.8),
+        inset 0 0 10px rgba(0, 255, 136, 0.2);
+      background: rgba(0, 255, 136, 0.15);
+      transform: translateY(-3px);
+      
+      &::before {
+        opacity: 1;
+      }
+    }
+
+    &.active {
+      color: #ff00ff;
+      border-color: #ff00ff;
+      box-shadow: 
+        0 0 16px rgba(255, 0, 255, 0.8),
+        inset 0 0 15px rgba(255, 0, 255, 0.3);
+      background: rgba(255, 0, 255, 0.2);
+      text-shadow: 
+        0 0 12px rgba(255, 0, 255, 0.8),
+        2px 2px 0 #000;
+    }
+  }
+}
