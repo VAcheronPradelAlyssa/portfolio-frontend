@@ -26,49 +26,80 @@
 // Header
 .cats-header {
   text-align:center;
-  padding:3rem 2rem;
-  margin-bottom:3rem;
+  padding:1.5rem 2rem;
+  margin-bottom:2rem;
   position:relative;
   z-index:1;
 }
 
+.cats-header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 1.2rem auto 0;
+  text-align: left;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.cats-header-text {
+  flex: 1;
+}
+
 .pixel-title {
   font-family:'Press Start 2P', cursive;
-  font-size:2.5rem;
+  font-size:1.8rem;
   color:#8b4513;
   text-shadow:
     3px 3px 0 #d2691e,
     6px 6px 0 rgba(139, 69, 19, 0.3);
-  margin-bottom:1.5rem;
+  margin-bottom:0.8rem;
   animation:float-title 3s ease-in-out infinite;
+
+  @media (max-width: 600px) {
+    font-size: 1.2rem;
+  }
 }
 
 .cats-subtitle {
-  font-size:1.2rem;
+  font-size:1rem;
   color:#654321;
-  max-width:700px;
-  margin:0 auto 2rem;
+  margin:0 0 0.8rem;
   line-height:1.6;
+}
+
+.header-project-wrapper {
+  max-width: 420px;
+  margin-top: 0.8rem;
+}
+
+.header-project-wrapper .project-card-cat {
+  margin: 0 auto;
 }
 
 // Badge de formation
 .formation-badge {
-  background: rgba(139, 69, 19, 0.2);
-  border: 3px solid #8b4513;
-  border-radius: 12px;
-  padding: 1.2rem 2rem;
-  margin: 1.5rem auto;
-  max-width: 600px;
+  background: rgba(139, 69, 19, 0.15);
+  border: 2px solid #8b4513;
+  border-radius: 10px;
+  padding: 0.8rem 1.2rem;
+  margin-bottom: 2.4rem; /* décoller des cartes en dessous */
+  position: relative;
+  z-index: 2;
   
   p {
-    margin: 0.5rem 0;
+    margin: 0.3rem 0;
     color: #8b4513;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.88rem;
     
     &:first-child {
       margin-top: 0;
-      font-size: 1.05rem;
     }
     
     &:last-child {
@@ -79,42 +110,39 @@
 }
 
 // Section photo des chats
-.cats-photo-section {
-  margin: 2rem auto;
-  display: flex;
-  justify-content: center;
-}
-
 .cats-photo-frame {
   background: linear-gradient(135deg, rgba(222, 184, 135, 0.95), rgba(210, 180, 140, 0.95));
-  border: 5px solid #8b4513;
-  border-radius: 15px;
-  padding: 1.5rem;
-  max-width: 350px;
-  box-shadow: 0 10px 30px rgba(139, 69, 19, 0.3);
-  transition: all 0.3s ease;
-  
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(139, 69, 19, 0.5);
+    border: 4px solid #8b4513;
+    border-radius: 12px;
+    padding: 0.6rem;
+    max-width: 340px; /* augmente le bloc global */
+    flex-shrink: 0;
+    box-shadow: 0 6px 18px rgba(139, 69, 19, 0.3);
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(139, 69, 19, 0.5);
+    }
   }
-}
+
 
 .cats-photo {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  border: 3px solid #8b4513;
+  width: 320px;       /* image plus grande, carré */
+  height: 320px;      /* carré pour un rendu net */
+  object-fit: cover;
+  border-radius: 18px;
+  border: 2px solid #8b4513;
   display: block;
+  cursor: zoom-in;
 }
 
 .cats-photo-caption {
-  margin: 1rem 0 0 0;
+  margin: 0.4rem 0 0 0;
   text-align: center;
   color: #8b4513;
   font-weight: 600;
-  font-size: 0.95rem;
-  line-height: 1.5;
+  font-size: 0.75rem;
 }
 
 // Notice "Bientôt disponible"
@@ -187,7 +215,7 @@
     linear-gradient(135deg, rgba(222, 184, 135, 0.95), rgba(210, 180, 140, 0.95));
   border:5px solid #8b4513;
   border-radius:20px;
-  padding:2rem;
+  padding:2.4rem; /* un peu plus d'air pour éviter que le badge touche le bord */
   cursor:pointer;
   transition:all 0.4s ease;
   box-shadow:
@@ -442,8 +470,8 @@
 // Badge de validation
 .validation-badge {
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 20px;   /* décollé du bord */
+  right: 20px; /* décollé du bord */
   background: linear-gradient(135deg, #4caf50, #45a049);
   color: #fff;
   padding: 0.5rem 1rem;
@@ -495,6 +523,46 @@
       color: #654321;
       font-size: 0.9rem;
     }
+  }
+  .formation-badge {
+    margin: 24px auto 2.4rem; 
+    width: min(1100px, 92%);
+    background: rgba(139, 69, 19, 0.15);
+    border: 2px solid #8b4513;
+    border-radius: 10px;
+    padding: 0.8rem 1.2rem;
+
+    p {
+      margin: 0.3rem 0;
+      color: #8b4513;
+      font-weight: 600;
+      font-size: 0.88rem;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+        color: #d2691e;
+      }
+    }
+  }
+
+  /* Badge "section" (Projets persos) */
+  .section-badge {
+    margin: 22px auto 14px;
+    width: min(1100px, 92%);
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(20, 20, 35, 0.55);
+    backdrop-filter: blur(8px);
+  }
+
+  .section-badge.perso-badge {
+    border-color: rgba(255, 215, 0, 0.25);
+    background: rgba(35, 25, 5, 0.35);
   }
 }
 
@@ -645,8 +713,8 @@
   }
   
   .validation-badge {
-    top: 10px;
-    right: 10px;
+    top: 12px;
+    right: 12px;
     padding: 0.4rem 0.8rem;
     font-size: 0.75rem;
   }
@@ -669,3 +737,105 @@
     font-size: 0.85rem;
   }
 }
+
+  /* Modale photo chats (accessible, sans JS) */
+  .modal-cat {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.6);
+    z-index: 9999;
+    padding: 2rem;
+  }
+
+  .modal-content-cat {
+    background: linear-gradient(135deg,#fff,#f7f1e8);
+    border-radius: 12px;
+    padding: 1rem;
+    max-width: 900px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    position: relative;
+    text-align: center;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: transparent;
+    color: #8b4513;
+    font-size: 1.6rem;
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+  }
+
+  .modal-close:focus,
+  .modal-close:hover {
+    background: rgba(139,69,19,0.08);
+    outline: 2px solid rgba(139,69,19,0.2);
+  }
+
+  .modal-cat-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 4px solid #8b4513;
+    display: block;
+    margin: 0.6rem auto;
+    object-fit: cover;
+  }
+
+  .modal-caption {
+    color: #654321;
+    font-weight: 600;
+    margin-top: 0.6rem;
+  }
+
+  /* Visually hidden utility for accessible heading */
+  .visually-hidden {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    white-space: nowrap !important;
+  }
+
+  /* Bouton lien projet */
+  .project-link-button {
+    display: inline-block;
+    background: linear-gradient(135deg,#ffd27a,#ffb84d);
+    color:#5b2f00;
+    padding: 0.5rem 0.9rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight:700;
+    margin-top:0.6rem;
+    border:2px solid rgba(139,69,19,0.12);
+  }
+
+  .project-link-button:hover,
+  .project-link-button:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(139,69,19,0.2);
+  }
+
+  .cats-photo-link { display: block; outline-offset: 4px; }
+  .cats-photo-link:focus .cats-photo,
+  .cats-photo-link:hover .cats-photo { transform: scale(1.03); transition: transform 0.25s; }
+
+  .project-card-cat.perso { border-color:#ffd27a; }
+
+  .project-card-cat.info-card .validation-badge {
+    background: linear-gradient(135deg,#ffd27a,#ffb84d);
+    color: #5b2f00;
+  }

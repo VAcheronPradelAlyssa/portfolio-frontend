@@ -1,38 +1,106 @@
 <div class="projets-chats">
   <!-- Header -->
   <div class="cats-header">
-    <h1 class="pixel-title">🐱 MES PROJETS RONRONNANTS 💻</h1>
-    <p class="cats-subtitle">
-      Chaque projet a été créé avec amour...    et quelques poils de chat sur le clavier 😺
-    </p>
-    
-    <!-- Photo des chats -->
-    <div class="cats-photo-section">
+    <h1 class="pixel-title">🐱 MES PROJETS 💻</h1>
+
+    <div class="cats-header-content">
       <div class="cats-photo-frame">
-        <img src="/assets/noupie-pitau.jpg" alt="Noupie et Pitau, mes deux chats" class="cats-photo">
-        <p class="cats-photo-caption">Noupie et Pitau 🐱💕 - Mes assistants développeurs (très) superviseurs</p>
+        <img
+          src="/assets/noupie-pitau.jpg"
+          alt="Noupie et Pitau, mes assistants développeurs"
+          class="cats-photo"
+          (click)="toggleLightbox('/assets/noupie-pitau.jpg')"
+          tabindex="0"
+        />
+        <p class="cats-photo-caption">Noupie & Pitau 🐾</p>
       </div>
-    </div>
-    
-    <div class="formation-badge">
-      <p>🎓 <strong>Formation Développeur Full-Stack Java/Angular</strong> - OpenClassrooms (RNCP Niveau 7 - Bac+5)</p>
-      <p>Mars - Septembre 2025 ✅</p>
-    </div>
-    
-    <div class="coming-soon-notice">
-      <p>🚧 <em>Les liens vers les pages détaillées de chaque projet seront disponibles très prochainement !</em> 🚧</p>
-    </div>
-    
-    <div class="cat-emojis">
-      <span class="floating-cat">🐱</span>
-      <span class="floating-cat">😺</span>
-      <span class="floating-cat">😸</span>
+
+      <div class="cats-header-text">
+        <p class="cats-subtitle">
+          Chaque projet a été créé avec amour... et quelques poils de chat sur le clavier 😺
+        </p>
+
+        <!-- (badge formation retiré d'ici) -->
+      </div>
     </div>
   </div>
 
-  <!-- Grille de projets -->
-  <div class="projects-grid-cats">
+  <!-- Modale -->
+  <div
+    class="modal-cat"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-cat-title"
+    tabindex="-1"
+    *ngIf="lightboxImage() as img"
+    (click)="closeLightbox()"
+  >
+    <div class="modal-content-cat" (click)="$event.stopPropagation()">
+      <h2 id="modal-cat-title" class="visually-hidden">Photo agrandie - Noupie & Pitau</h2>
+      <button class="modal-close" (click)="closeLightbox()" aria-label="Fermer la modale">✕</button>
+      <img [src]="img" alt="Photo agrandie" class="modal-cat-image" (click)="closeLightbox()" />
+      <p class="modal-caption">Noupie et Pitau 🐾 — Mes assistants développeurs</p>
+    </div>
+  </div>
 
+  <!-- ========================= -->
+  <!-- SECTION : PROJETS PERSO    -->
+  <!-- ========================= -->
+ <div class="formation-badge">
+      <p>✨ <strong>Projets personnels</strong> — pour le fun, pour apprendre, pour de vrai</p>
+  </div>
+
+  <div class="projects-grid-cats">
+    <!-- Projet Perso: AAPPMA -->
+    <div class="project-card-cat perso" role="group" aria-label="AAPPMA Brochet de Basse Vilaine">
+      <div class="validation-badge">✨ PERSO</div>
+
+      <div class="cat-ears">
+        <div class="ear-left"></div>
+        <div class="ear-right"></div>
+      </div>
+
+      <div class="project-screen-cat">
+        <img src="/assets/projects/aappma2.png" alt="AAPPMA Brochet de Basse Vilaine" class="project-image-cat" />
+      </div>
+
+      <div class="project-info-cat">
+        <p class="project-official-title">Site associatif • Projet personnel</p>
+        <h3 class="project-title-cat">AAPPMA Brochet de Basse Vilaine</h3>
+        <p class="project-date-cat">📅 Projet perso • Non scolaire</p>
+        <p class="project-description-cat">
+          Refonte visuelle et mise en avant des informations associatives : actualités, galerie photos et ressources pour les adhérents. Projet front uniquement (Angular).
+        </p>
+
+        <div class="project-tech-cat">
+          <span class="tech-badge-cat">HTML</span>
+          <span class="tech-badge-cat">SCSS</span>
+          <span class="tech-badge-cat">Angular</span>
+        </div>
+
+        <div class="project-skills-cat">
+          <p><strong>Liens :</strong></p>
+          <a class="project-link-button" href="https://aappma-brochet-basse-vilaine.eu" target="_blank" rel="noopener">
+            Visiter le site
+          </a>
+        </div>
+      </div>
+
+      <div class="fur-texture"></div>
+    </div>
+  </div>
+
+  <!-- ========================= -->
+  <!-- BADGE : FORMATION         -->
+  <!-- ========================= -->
+  <div class="formation-badge">
+    <p>🎓 <strong>Projets d'école validés par un jury</strong> — Chaque projet devait être présenté à l'oral pour passer au suivant et valider le parcours complet.</p>
+  </div>
+
+  <!-- ========================= -->
+  <!-- SECTION : PROJETS ECOLE    -->
+  <!-- ========================= -->
+  <div class="projects-grid-cats">
     <!-- Projet 1: TéléSport -->
     <div class="project-card-cat validated" (click)="navigateToProject('telesport')">
       <div class="validation-badge">✅ VALIDÉ</div>
@@ -40,26 +108,20 @@
         <div class="ear-left"></div>
         <div class="ear-right"></div>
       </div>
-      
+
       <div class="project-screen-cat">
-        <img src="/assets/projects/telesport.png" alt="TéléSport JO" class="project-image-cat">
+        <img src="/assets/projects/telesport.png" alt="TéléSport JO" class="project-image-cat" />
         <div class="paw-prints">
-          <span class="paw">🐾</span>
-          <span class="paw">🐾</span>
-          <span class="paw">🐾</span>
+          <span class="paw">🐾</span><span class="paw">🐾</span><span class="paw">🐾</span>
         </div>
       </div>
-      
+
       <div class="project-info-cat">
         <p class="project-official-title">Développez le front-end en utilisant Angular</p>
-        <h3 class="project-title-cat">
-          <span class="cat-icon">🏅</span> TéléSport - Dashboard JO
-        </h3>
+        <h3 class="project-title-cat"><span class="cat-icon">🏅</span> TéléSport - Dashboard JO</h3>
         <p class="project-date-cat">📅 Projet 1 • 40 heures</p>
         <p class="project-description-cat">
-          Dashboard interactif pour visualiser les statistiques des Jeux Olympiques 
-          (médailles par pays, etc.). Application responsive développée avec Angular 
-          en suivant les bonnes pratiques (services HTTP, RxJS, Observables).
+          Dashboard interactif pour visualiser les statistiques des Jeux Olympiques (médailles par pays, etc.). Application responsive développée avec Angular en suivant les bonnes pratiques (services HTTP, RxJS, Observables).
         </p>
         <div class="project-tech-cat">
           <span class="tech-badge-cat">Angular</span>
@@ -69,13 +131,15 @@
           <span class="tech-badge-cat">Git/GitHub</span>
         </div>
         <div class="project-skills-cat">
-          <p><strong>🎯 Compétences :   </strong></p>
+          <p><strong>🎯 Compétences :</strong></p>
           <ul>
             <li>✓ Développer le front-end avec Angular maintenable</li>
             <li>✓ Gérer le versionnage avec Git et GitHub</li>
           </ul>
         </div>
       </div>
+
+     
       
       <div class="fur-texture"></div>
     </div>
