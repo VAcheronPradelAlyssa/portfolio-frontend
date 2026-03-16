@@ -2,9 +2,9 @@ import { Component, OnInit, OnDestroy, signal, inject, AfterViewInit, computed }
 
 @Component({
   selector: 'app-accueil',
-  imports: [],
+  standalone: true,
   templateUrl: './accueil.html',
-  styleUrl: './accueil.scss'
+  styleUrls: ['./accueil.scss']
 })
 export class AccueilComponent implements OnInit, OnDestroy, AfterViewInit {
   user = signal<any>(null);
@@ -96,8 +96,8 @@ export class AccueilComponent implements OnInit, OnDestroy, AfterViewInit {
 
   downloadCV(): void {
     const link = document.createElement('a');
-    link.href = '/assets/CV_ALYSSA_VACHERON.pdf';
-    link.download = 'CV_ALYSSA_VACHERON.pdf';
+    link.href = '/assets/CV_VacheronAlyssa.pdf';
+    link.download = 'CV_VacheronAlyssa.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
